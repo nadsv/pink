@@ -1,3 +1,3 @@
 # Project "Pink"
 
-* Author: Nadezda Svezhintseva
+* Author: Nadezhda Svezhintseva

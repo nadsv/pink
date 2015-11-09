@@ -88,15 +88,30 @@ module.exports = function(grunt) {
             src: 'source/js/script.js',
             dest: 'build/js/script.min.js'
         }
+    },
+
+    includereplace: {
+        html: {
+          options: {
+            includesDir: 'source/html_inc/'
+          },
+          files: [{
+                src: '*.html', 
+                dest: 'build/', 
+                expand: true, 
+                cwd: 'source'
+            }]
+        }
     }
+
 };
 
-    config = require('./.gosha')(grunt, config);
 
     grunt.initConfig(config);
 
     grunt.registerTask("build", [
         "clean",
+        "includereplace",
         "copy",
         "sass",
         "cmq",

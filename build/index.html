@@ -1,17 +1,21 @@
+<!-- Head -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Pink</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="container">
 
 <!-- Header -->
 	<header class="page-header">
-			<a href="#" class="logo">
+
+		<div class="page-wrapper">
+			<!-- Nav -->
+						<a href="index.html" class="main-logo">
 				Pink
 			</a>
 			<nav class="page-nav">
@@ -22,101 +26,107 @@
 					<li class="main-menu__item"><a href="#">Отзывы</a></li>
 					<li class="main-menu__item"><a href="#">Конкурс</a></li>
 				</ul>
-			</nav>
+			</nav>			
 
-	<!-- Jombotron -->
-		<section class="jombotron">
-			<div class="jombotron__text">
-				<h1>Взгляните на жизнь иначе!</h1>
-				<button class="btn-load">Скачать приложение</button>
-				<ul class="os">
-					<li class="os__apple"><a href="#">Apple</a></li>
-					<li class="os__android"><a href="#">Android</a></li>
-					<li class="os__windows"><a href="#">Windows</a></li>
-				</ul>
-				<p>Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
-			</div>
-			<div class="jombotron__picture"></div>
-		</section>
-	</header>
-
-<!-- Offer -->
-	<section class="offer">
-		<h2 class="offer__header">Устали от серости мегаполиса? Нам есть, что вам предложить!</h2>
-		<ul class="features">
-			<li class="features__item">
-				<h3>Поднимает настроение</h3>
-				<p>Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
-			</li>
-			<li class="features__item">
-				<h3>Меняет мир вокруг</h3>
-				<p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
-			</li>
-			<li class="features__item">
-				<h3>Заводит новых друзей</h3>
-				<p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
-			</li>
-		</ul>
-		<article class="research">
-			<div class="research__wrapper">
-				<h3>Эффект на 24 часа!</h3>
-				<p>Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
-				<a href="#">Узнать больше об исследовании</a>
-			</div>
-		</article>
-	</section>
-
-<!-- Review -->
-	<section class="review">
-		<div class="review__wrapper">
-			<div class="review__text">Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
-			</div>
-			<div class="review__author-name">Николай Петров</div>
-			<div class="review__author-profession">25 лет, водитель трамвая</div>
+			<!-- Jombotron -->
+			<section class="jombotron">
+				<div class="jombotron__text">
+					<h1>Взгляните на жизнь иначе!</h1>
+					<a class="link-load" href="#">Скачать приложение</a>
+					<ul class="os">
+						<li class="os__apple"><a href="#"><img src="./img/apple-logo.svg" alt="Apple" width="50"></a></li>
+						<li class="os__android"><a href="#"><img src="./img/android-logo.svg" alt="Android" width="45"></a></li>
+						<li class="os__windows"><a href="#"><img src="./img/microsoft-logo.svg" alt="Windos" width="46"></a></li>
+					</ul>
+					<p>Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+				</div>
+				<div class="jombotron__picture"></div>
+			</section>
 		</div>
-		<div class="review__slider"></div>
-	</section>
 
-<!-- Edition -->
-	<section class="edition">
-		<table class="table-edition">
-			<tr>
-				<th class="table-edition__header  table-edition__header--first-cell"></th>
-				<th class="table-edition__header">
-					<h3>База</h3>
-					<p>1,99 USD</p>
-				</th>
-				<th class="table-edition__header">
-					<h3>Стандарт</h3>
-					<p>3,99 USD</p>
-				</th>
-				<th class="table-edition__header">
-					<h3>Анлим</h3>
-					<p>9,99 USD</p>
-				</th>
-			</tr>
-			<tr>
-				<td>Розовый фильтр</td>
-				<td>&#x2713;</td>
-				<td>&#x2713;</td>
-				<td>&#x2713;</td>
-			</tr>
-			<tr>
-				<td>Смайлики</td>
-				<td>&#x2715;</td>
-				<td>&#x2713;</td>
-				<td>&#x2713;</td>
-			</tr>
-			<tr>
-				<td>Комментарии</td>
-				<td>&#x2715;</td>
-				<td>&#x2715;</td>
-				<td>&#x2713;</td>
-			</tr>
-		</table>
-	</section>
+	</header>
+	
 
-<!--Contacts-->                
+	<!-- Offer -->
+	<div class="page-wrapper">
+		<section class="offer">
+			<h2 class="offer__header">Устали от серости мегаполиса? Нам есть, что вам предложить!</h2>
+			<ul class="features">
+				<li class="features__item">
+					<h3>Поднимает настроение</h3>
+					<p>Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
+				</li>
+				<li class="features__item">
+					<h3>Меняет мир вокруг</h3>
+					<p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+				</li>
+				<li class="features__item">
+					<h3>Заводит новых друзей</h3>
+					<p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+				</li>
+			</ul>
+			<article class="research">
+				<div class="research__wrapper">
+					<h3>Эффект на 24 часа!</h3>
+					<p>Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
+					<a href="#">Узнать больше об исследовании</a>
+				</div>
+			</article>
+		</section>
+
+	<!-- Review -->
+		<section class="review">
+			<div class="review__wrapper">
+				<p class="review__text">
+				Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
+				</p>
+				<p class="review__author-name">Николай Петров</p>
+				<p class="review__author-profession">25 лет, водитель трамвая</p>
+			</div>
+			<div class="review__slider"></div>
+		</section>
+
+		<!-- Edition -->
+		<section class="edition">
+			<table class="table-edition">
+				<tr>
+					<th class="table-edition__header  table-edition__header--first-cell"></th>
+					<th class="table-edition__header">
+						<h3>База</h3>
+						<p>1,99 USD</p>
+					</th>
+					<th class="table-edition__header">
+						<h3>Стандарт</h3>
+						<p>3,99 USD</p>
+					</th>
+					<th class="table-edition__header">
+						<h3>Анлим</h3>
+						<p>9,99 USD</p>
+					</th>
+				</tr>
+				<tr>
+					<td>Розовый фильтр</td>
+					<td>&#x2713;</td>
+					<td>&#x2713;</td>
+					<td>&#x2713;</td>
+				</tr>
+				<tr>
+					<td>Смайлики</td>
+					<td>&#x2715;</td>
+					<td>&#x2713;</td>
+					<td>&#x2713;</td>
+				</tr>
+				<tr>
+					<td>Комментарии</td>
+					<td>&#x2715;</td>
+					<td>&#x2715;</td>
+					<td>&#x2713;</td>
+				</tr>
+			</table>
+		</section>
+	</div>
+
+		<!--Contacts-->                
 		<section class="contacts">
 			<h2 class="contacts__header">Остались вопросы? Свяжитесь с нами!</h2>
 			<ul class="contacts__details">
@@ -135,7 +145,7 @@
 			</ul>
 			<div class="map__wrapper" id="map-canvas" style="height: 300px;"></div>
 		</section>
-
+	
 <!-- Footer -->
 		<footer class="page-footer">
 			<a href="#" class="logo">
@@ -149,7 +159,6 @@
 			<a href="https://htmlacademy.ru/" class="copyright">HtmlAcademy</a>
 		</footer>
 
-	</div>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <!--Google map-->
 	<script>

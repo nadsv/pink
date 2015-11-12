@@ -1,0 +1,44 @@
+.page-header{
+	position: relative;
+    background: #1d2631 url('../img/background-mobile@1x.jpg') no-repeat 55% 20%;
+    background-size: cover;
+
+    @media  (min-resolution: 1.5dppx) {
+        background-image: url('../img/background-mobile@2x.jpg');
+    }
+
+    @media  (min-resolution: 2.5dppx) {
+        background-image: url('../img/background-mobile@3x.jpg');
+    }
+
+    color: white;
+
+    .page-wrapper {
+		position: relative;
+	}
+}
+
+
+.main-logo {
+	position: absolute;
+	display: block;
+	z-index: 10;
+	top: 0;
+	left:0;
+	width: 78px;
+	height: 27px;
+	background: transparent url('../img/logo-white-mobile.svg') no-repeat 55% 20%;
+	font-size: 0;
+}
+
+.main-menu {
+	display: flex;
+	flex-direction: column;
+
+	&__item {
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}

@@ -33,7 +33,15 @@ module.exports = function(grunt) {
           spawn: false,
           livereload: true
         }
-      }
+      },
+    html: {
+        files: ['source/*.html', 'source/_html_inc/*.html'],
+        tasks: ['includereplace:html'],
+        options: {
+          spawn: false,
+          livereload: true
+        },
+      },
     },
 
     cmq: {
@@ -93,7 +101,7 @@ module.exports = function(grunt) {
     includereplace: {
         html: {
           options: {
-            includesDir: 'source/html_inc/'
+            includesDir: 'source/_html_inc/'
           },
           files: [{
                 src: '*.html', 

@@ -1,12 +1,27 @@
 .jombotron {
+	background-color: $dark-blue;
+	color: $light-text;
+	text-align: center;
+}
 
-	&__text {
-		padding: 0 42px;
-		h1 {
-			color: $light-text;
-			text-align: center;
-			font-size: 24px;
-			font-weight: 200;
-		}
+.load-link {
+	display: inline-block;
+	width: 17.69rem;
+	height: 3.44rem;
+	border: 3px solid $light-text;
+	border-radius: 8.85rem;
+	color: $light-text;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 11.6px;
+	font-size: $mobile-menu-font-size;
+
+	&:hover {
+		background-color: $light-text;
+		color: $pink;
+	}
+
+	&:active {
+		color: $pink-transparent;
 	}
 }

@@ -355,6 +355,8 @@ th {
 
 /*Variables*/
 /*Fonts*/
+/*Breakpoints*/
+/*Colors*/
 /*Sizes*/
 html {
   box-sizing: border-box; }
@@ -379,6 +381,8 @@ a {
 /*Tablet*/
 /*Desktop*/
 .page-header {
+  position: relative;
+  min-height: 28.69rem;
   background: #1d2631 url("../img/background-mobile@1x.jpg") no-repeat 55% 20%;
   background-size: cover; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
@@ -387,13 +391,36 @@ a {
   @media (-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 2.5dppx) {
     .page-header {
       background-image: url("../img/background-mobile@3x.jpg"); } }
+  .page-header h1 {
+    min-width: 320px;
+    padding: 0 2.63rem;
+    margin-top: 1.56rem;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 200; }
+  .page-header__picture {
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    min-width: 320px;
+    min-height: 17.81rem;
+    margin-left: -6.5rem;
+    background: transparent url("../img/iphone-hand-mobile@1x.png") no-repeat 50% 50%;
+    background-size: auto 100%; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+      .page-header__picture {
+        background-image: url("../img/iphone-hand-mobile@2x.png"); } }
+    @media (-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 2.5dppx) {
+      .page-header__picture {
+        background-image: url("../img/iphone-hand-mobile@3x.png"); } }
 
 .main-logo {
   position: absolute;
   display: block;
   z-index: 10;
-  top: 20px;
-  left: 20px;
+  top: 1.25rem;
+  left: 1.25rem;
   width: 74.426px;
   height: 22.859px;
   background: url("../img/sprites/logo-sprite.svg") 0 99.8192243972% no-repeat;
@@ -405,7 +432,8 @@ a {
 
 .page-nav__wrapper {
   position: relative;
-  height: 66px;
+  min-width: 320px;
+  height: 4.13rem;
   background-color: #283645;
   z-index: 9;
   box-shadow: 0 1px black; }
@@ -414,8 +442,8 @@ a {
 
 .page-nav__toggle {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1.25rem;
+  right: 1.25rem;
   z-index: 1;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -423,9 +451,9 @@ a {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50px;
-  height: 25px;
-  line-height: 20px; }
+  width: 3.13rem;
+  height: 1.56rem;
+  line-height: 1.25rem; }
   .page-nav__toggle > span {
     display: inline-block;
     vertical-align: bottom;
@@ -435,7 +463,8 @@ a {
     position: relative; }
     .page-nav__toggle > span:before, .page-nav__toggle > span:after {
       width: 100%;
-      height: .25rem;
+      height: 4px;
+      height: 0.25rem;
       background: white;
       position: absolute;
       left: 0;
@@ -443,9 +472,11 @@ a {
       -webkit-transform-origin: 50% 50%;
               transform-origin: 50% 50%; }
     .page-nav__toggle > span:before {
-      top: 10px; }
+      top: 10px;
+      top: 0.625rem; }
     .page-nav__toggle > span:after {
-      top: -10px; }
+      top: -10px;
+      top: -0.625rem; }
   .page-nav__toggle:hover > span {
     background: #d22856; }
     .page-nav__toggle:hover > span:before, .page-nav__toggle:hover > span:after {
@@ -455,9 +486,9 @@ a {
     .page-nav__toggle:active > span:before, .page-nav__toggle:active > span:after {
       background: rgba(210, 40, 86, 0.3); }
   .page-nav__toggle--closed {
-    top: 20px;
-    right: 20px;
-    width: 25px; }
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 1.56rem; }
     .page-nav__toggle--closed > span {
       background: transparent; }
       .page-nav__toggle--closed > span:before, .page-nav__toggle--closed > span:after {
@@ -482,7 +513,7 @@ a {
           flex-direction: column;
   position: absolute;
   z-index: 8;
-  top: 66px;
+  top: 4.13rem;
   left: 0;
   width: 100%;
   margin: 0;
@@ -490,13 +521,13 @@ a {
   background-color: #283645; }
   .main-menu__item {
     width: 100%;
-    height: 65px;
+    height: 4.06rem;
     display: inline-block;
     text-align: center;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 1.13rem;
     font-weight: bold;
-    line-height: 65px;
+    line-height: 4.06rem;
     box-shadow: 0 1px black, inset 0 2px rgba(255, 255, 255, 0.15); }
     .main-menu__item a {
       color: white; }
@@ -507,10 +538,24 @@ a {
   .main-menu--closed {
     display: none; }
 
-.jombotron__text {
-  padding: 0 42px; }
-  .jombotron__text h1 {
-    color: white;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 200; }
+.jombotron {
+  background-color: #1d2631;
+  color: white;
+  text-align: center; }
+
+.load-link {
+  display: inline-block;
+  width: 17.69rem;
+  height: 3.44rem;
+  border: 3px solid white;
+  border-radius: 8.85rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 11.6px;
+  font-size: 1.13rem; }
+  .load-link:hover {
+    background-color: white;
+    color: #d22856; }
+  .load-link:active {
+    color: rgba(210, 40, 86, 0.3); }

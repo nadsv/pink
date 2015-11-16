@@ -3,16 +3,20 @@
 
 /*Fonts*/
 $font-family:      				'Open Sans', Arial, sans-serif;
+$mobile-menu-font-size:			1.13rem;
+$load-link-font-size:			$mobile-menu-font-size;
 
-/*Sizes*/
+/*Breakpoints*/
 $sm-screen: 320px;
 $md-screen: 700px;
 $lg-screen: 1200px;
 
-//Colors
+/*Colors*/
 $pink:							#d22856;
 $pink-transparent:				rgba(210,40,86,.3);
 $light-text:					white;
 $mobile-menu-color:				#283645;
-$mobile-menu-font-size:			18px;
-$mobile-menu-item-height:		65px;
+$dark-blue:						#1d2631;
+
+/*Sizes*/	
+$mobile-menu-item-height:		4.06rem;

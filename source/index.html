@@ -1,14 +1,13 @@
-<!-- Head -->
 @@include("head.html")
 <body>
 
 <!-- Header -->
 	<header class="page-header">
 
-		<div class="page-wrapper">
-			<!-- Nav -->
-			@@include("nav.html")			
-
+		<!-- Nav -->
+		@@include("nav.html")	
+				
+		<div class="page-wrapper">	
 			<!-- Jombotron -->
 			<section class="jombotron">
 				<div class="jombotron__text">
@@ -71,39 +70,47 @@
 		<section class="edition">
 			<table class="table-edition">
 				<tr>
-					<th class="table-edition__header  table-edition__header--first-cell"></th>
+					<th class="table-edition__first-cell"></th>
 					<th class="table-edition__header">
-						<h3>База</h3>
-						<p>1,99 USD</p>
+						<p class="table-edition__title">База</p>
+						<p class="table-edition__price">1,99 USD</p>
+					</th>
+					<th class="table-edition__header table-edition__header--hit">
+						<p class="table-edition__title">Стандарт</p>
+						<p class="table-edition__price">3,99 USD</p>
 					</th>
 					<th class="table-edition__header">
-						<h3>Стандарт</h3>
-						<p>3,99 USD</p>
-					</th>
-					<th class="table-edition__header">
-						<h3>Анлим</h3>
-						<p>9,99 USD</p>
+						<p class="table-edition__title">Анлим</p>
+						<p class="table-edition__price">9,99 USD</p>
 					</th>
 				</tr>
 				<tr>
 					<td>Розовый фильтр</td>
-					<td>&#x2713;</td>
-					<td>&#x2713;</td>
-					<td>&#x2713;</td>
+					<td class="table-edition__yes">&#x2713;</td>
+					<td class="table-edition__yes">&#x2713;</td>
+					<td class="table-edition__yes">&#x2713;</td>
 				</tr>
 				<tr>
 					<td>Смайлики</td>
-					<td>&#x2715;</td>
-					<td>&#x2713;</td>
-					<td>&#x2713;</td>
+					<td class="table-edition__no">&#x2715;</td>
+					<td class="table-edition__yes">&#x2713;</td>
+					<td class="table-edition__yes">&#x2713;</td>
 				</tr>
 				<tr>
 					<td>Комментарии</td>
-					<td>&#x2715;</td>
-					<td>&#x2715;</td>
-					<td>&#x2713;</td>
+					<td class="table-edition__no">&#x2715;</td>
+					<td class="table-edition__no">&#x2715;</td>
+					<td class="table-edition__yes">&#x2713;</td>
 				</tr>
 			</table>
+			<div class="edition-slider">
+				<input type="radio" name="price-toggle" id="price-1" hidden>
+				<input type="radio" name="price-toggle" id="price-2" checked hidden>
+				<input type="radio" name="price-toggle" id="price-3" hidden>
+				<label class="edition-slider__item" for="price-1"></label>
+				<label class="edition-slider__item" for="price-2"></label>
+				<label class="edition-slider__item" for="price-3"></label>
+			</div>
 		</section>
 	</div>
 

@@ -32,6 +32,7 @@
     "grunt-lintspaces": "0.7.x",
     "grunt-postcss": "0.6.x",
     "grunt-sass": "1.0.x",
+    "grunt-svg-sprite": "^1.2.13",
     "husky": "0.10.x",
     "load-grunt-tasks": "^3.2.0"
   }

@@ -1,3 +1,9 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6,9 +12,20 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
+/**
+ * Remove default margin.
+ */
 body {
   margin: 0; }
 
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
 article,
 aside,
 details,
@@ -24,6 +41,10 @@ section,
 summary {
   display: block; }
 
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
 audio,
 canvas,
 progress,
@@ -33,21 +54,42 @@ video {
   vertical-align: baseline;
   /* 2 */ }
 
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
 audio:not([controls]) {
   display: none;
   height: 0; }
 
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
 [hidden],
 template {
   display: none; }
 
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
 a {
   background-color: transparent; }
 
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
 a:active,
 a:hover {
   outline: 0; }
 
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
 abbr[title] {
   border-bottom: 1px dotted; }
 
@@ -337,29 +379,99 @@ a {
 /*Tablet*/
 /*Desktop*/
 .page-header {
-  position: relative;
   background: #1d2631 url("../img/background-mobile@1x.jpg") no-repeat 55% 20%;
-  background-size: cover;
-  color: white; }
+  background-size: cover; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
     .page-header {
       background-image: url("../img/background-mobile@2x.jpg"); } }
   @media (-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 2.5dppx) {
     .page-header {
       background-image: url("../img/background-mobile@3x.jpg"); } }
-  .page-header .page-wrapper {
-    position: relative; }
 
 .main-logo {
   position: absolute;
   display: block;
   z-index: 10;
-  top: 0;
-  left: 0;
-  width: 78px;
-  height: 27px;
-  background: transparent url("../img/logo-white-mobile.svg") no-repeat 55% 20%;
+  top: 20px;
+  left: 20px;
+  width: 74.426px;
+  height: 22.859px;
+  background: url("../img/sprites/logo-sprite.svg") 0 99.8192243972% no-repeat;
   font-size: 0; }
+  .main-logo:hover {
+    background-position: 68.10142102903365% 89.66603150914317%; }
+  .main-logo:active {
+    background-position: 0 89.66603150914317%; }
+
+.page-nav__wrapper {
+  position: relative;
+  height: 66px;
+  background-color: #283645;
+  z-index: 9;
+  box-shadow: 0 1px black; }
+  .page-nav__wrapper--closed {
+    background-color: rgba(0, 0, 0, 0.3); }
+
+.page-nav__toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 25px;
+  line-height: 20px; }
+  .page-nav__toggle > span {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+    height: .25rem;
+    background: white;
+    position: relative; }
+    .page-nav__toggle > span:before, .page-nav__toggle > span:after {
+      width: 100%;
+      height: .25rem;
+      background: white;
+      position: absolute;
+      left: 0;
+      content: '';
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%; }
+    .page-nav__toggle > span:before {
+      top: 10px; }
+    .page-nav__toggle > span:after {
+      top: -10px; }
+  .page-nav__toggle:hover > span {
+    background: #d22856; }
+    .page-nav__toggle:hover > span:before, .page-nav__toggle:hover > span:after {
+      background: #d22856; }
+  .page-nav__toggle:active > span {
+    background: rgba(210, 40, 86, 0.3); }
+    .page-nav__toggle:active > span:before, .page-nav__toggle:active > span:after {
+      background: rgba(210, 40, 86, 0.3); }
+  .page-nav__toggle--closed {
+    top: 20px;
+    right: 20px;
+    width: 25px; }
+    .page-nav__toggle--closed > span {
+      background: transparent; }
+      .page-nav__toggle--closed > span:before, .page-nav__toggle--closed > span:after {
+        background: white;
+        top: 0; }
+      .page-nav__toggle--closed > span:before {
+        -webkit-transform: rotate3d(0, 0, 1, 45deg);
+                transform: rotate3d(0, 0, 1, 45deg); }
+      .page-nav__toggle--closed > span:after {
+        -webkit-transform: rotate3d(0, 0, 1, -45deg);
+                transform: rotate3d(0, 0, 1, -45deg); }
+    .page-nav__toggle--closed:active > span,
+    .page-nav__toggle--closed:hover > span {
+      background: transparent; }
 
 .main-menu {
   display: -webkit-flex;
@@ -367,9 +479,38 @@ a {
   display: flex;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  position: absolute;
+  z-index: 8;
+  top: 66px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #283645; }
   .main-menu__item {
     width: 100%;
+    height: 65px;
     display: inline-block;
     text-align: center;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 65px;
+    box-shadow: 0 1px black, inset 0 2px rgba(255, 255, 255, 0.15); }
+    .main-menu__item a {
+      color: white; }
+  .main-menu__item:hover > a {
+    color: #d22856; }
+  .main-menu__item:active > a {
+    color: rgba(210, 40, 86, 0.3); }
+  .main-menu--closed {
+    display: none; }
+
+.jombotron__text {
+  padding: 0 42px; }
+  .jombotron__text h1 {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 200; }

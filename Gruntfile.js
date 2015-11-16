@@ -110,7 +110,23 @@ module.exports = function(grunt) {
                 cwd: 'source'
             }]
         }
-    }
+    },
+
+    svg_sprite : {
+        logo: {
+            src         : ["source/img/icon-logo/*.svg"],
+            dest        : "source/img/logo-sprite/",
+             options             : {
+                mode            : {
+                    css         : {     // Activate the «css» mode 
+                        render  : {
+                            css : true  // Activate CSS output (with default options) 
+                        }
+                    }
+                }
+            }
+        }
+    },
 
 };
 

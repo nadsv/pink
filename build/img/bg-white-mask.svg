@@ -1,1 +1,13 @@
-<svg version="1" xmlns="http://www.w3.org/2000/svg" height="61.905" viewBox="0 0 595.28 61.905" preserveAspectRatio="none"><path fill="#FFF" d="M297.64 61.905L0 0h595.28"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   height="32"
+   viewBox="0 0 320 32"
+   preserveAspectRatio="none">
+  <path
+     style="fill:#ffffff"
+     d="M 0,0 0,32 320,0 Z"
+     id="path4" />
+</svg>

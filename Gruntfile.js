@@ -114,8 +114,8 @@ module.exports = function(grunt) {
 
     svg_sprite : {
         logo: {
-            src         : ["source/img/icon-logo/*.svg"],
-            dest        : "source/img/logo-sprite/",
+            src         : ["source/img/icon-os/*.svg"],
+            dest        : "source/img/os-sprite/",
              options             : {
                 mode            : {
                     css         : {     // Activate the «css» mode 

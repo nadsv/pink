@@ -11,23 +11,27 @@
     @media  (min-resolution: 2.5dppx) {
         background-image: url('../img/background-mobile@3x.jpg');
     }
+    
+    &__wrapper {
+        min-width: $sm-screen;
+        padding: 0 2.63rem;
+        
+    }
 
     h1 {
-			min-width: $sm-screen;
-			padding: 0 2.63rem;
-			margin-top: 1.56rem;
-			color: $light-text;
-			text-align: center;
-			font-size: 1.5rem;
-			font-weight: 200;
-		}
+        margin: 1.56rem auto 0 auto;
+		color: $light-text;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 200;
+	}
 
     &__picture {
     	position: absolute;
     	left: 25%;
     	bottom: 0;
     	min-width: $sm-screen;
-    	min-height: 17.81rem;
+    	min-height: 285px;
     	margin-left: -6.5rem;
 
 		background: transparent url('../img/iphone-hand-mobile@1x.png') no-repeat 50% 50%;
@@ -70,7 +74,7 @@
 		position: relative;
 		min-width: $sm-screen;
 		height: 4.13rem;
-		background-color: $mobile-menu-color;
+		background-color: $color-secondary;
 		z-index: 9;
 		box-shadow: 0 1px rgba(0,0,0,1);
 		
@@ -102,7 +106,7 @@
         &:before,
         &:after {
             width: 100%;
-            @include rem-fallback(height, 4);
+            height: 0.25rem;
             background: $light-text;
             position: absolute;
             left: 0;
@@ -111,29 +115,29 @@
         }
     
         &:before {
-            @include rem-fallback(top, 10);
+            top: 0.63rem;
         }
     
         &:after {
-            @include rem-fallback(top, -10);
+            top: -0.63rem;
         }
     }
 
     &:hover > span {
-        	background: $pink;
+        	background: $color-primary;
 
         	&:before,
         	&:after {
-				background: $pink;
+				background: $color-primary;
         	}
         }
 
     &:active > span {
-        	background: $pink-transparent;
+        	background: $color-primary-transparent;
 
         	&:before,
         	&:after {
-				background: $pink-transparent;
+				background: $color-primary-transparent;
         	}
         }
   
@@ -177,7 +181,7 @@
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: $mobile-menu-color;
+	background-color: $color-secondary;
 
 	&__item {
 		width: 100%;
@@ -198,11 +202,11 @@
 	}
 
 	&__item:hover > a{
-		color: $pink;
+		color: $color-primary;
 	}
 
 	&__item:active > a{
-		color: $pink-transparent;
+		color: $color-primary-transparent;
 	}
 
 	&--closed {

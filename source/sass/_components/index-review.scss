@@ -1,0 +1,39 @@
+.review {
+	text-align: center;
+	padding: (10/16+rem) (20/16+rem) 0 (20/16+rem);
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		padding-top: (21/16+rem);
+	}
+
+	&__text {
+		@include font(14, 30);
+		color: $prime-text;
+		order: 2;
+
+		&::before {
+			content:"«";
+			display: inline-block;
+			margin-right: -3/16+rem;
+		}
+
+		&::after {
+			content:"»";
+			display: inline-block;
+			margin-left: -3/16+rem;
+		}
+	}
+
+	&__author-name {
+		@include font(18, 52);
+		font-weight: bold;
+		order: 1;
+	}
+
+	&__author-profession {
+		display: none;
+	}
+
+}

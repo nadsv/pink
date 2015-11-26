@@ -12,6 +12,13 @@ body {
 
 ul {
 	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	padding: 0;
+	margin: 0;
 }
 
 a {
@@ -20,7 +27,7 @@ a {
 
 /*Mobile*/
 .page-wrapper {
-	width: $sm-screen;
+	min-width: $sm-screen;
 	margin: 0 auto;
 }
 

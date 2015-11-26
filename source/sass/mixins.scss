@@ -1,30 +1,25 @@
-@function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+@mixin font ($size, $line-height) {
+    font-size: ($size/16+rem);
+    line-height: ($line-height/16+rem);
 }
 
-@mixin rem-fallback($property, $values...) {
-  $max: length($values);
-  $pxValues: '';
-  $remValues: '';
-
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $remValues: #{$remValues + $value/16}rem;
-
-    @if $i < $max {
-      $remValues: #{$remValues + " "};
-    }
-  } 
-
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $pxValues: #{$pxValues + $value}px;
-
-    @if $i < $max {
-      $pxValues: #{$pxValues + " "};
-    }
-  } 
-  
-  #{$property}: $pxValues; 
-  #{$property}: $remValues; 
+@mixin size ($width, $height) {
+    width: ($width/16+rem);;
+    height: ($height/16+rem);;
 }
+
+@mixin hd-bg ($file-name, $ext, $color: transparent, $top: 0, $bottom: 0, $ver: 3) {
+    background: $color url('../img/#{$file-name}@1x.#{$ext}') no-repeat $top $bottom;
+    background-size: cover;
+
+    @media  (min-resolution: 1.5dppx) {
+        background-image: url('../img/#{$file-name}@2x.#{$ext}');
+    }
+
+    @if $ver == 3 {
+        @media  (min-resolution: 2.5dppx) {
+            background-image: url('../img/#{$file-name}@3x.#{$ext}');
+        }
+    }
+}
+

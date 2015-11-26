@@ -13,7 +13,7 @@
 		<header class="page-header">
 
 		<!-- Nav -->
-			<nav class="page-nav">
+						<nav class="page-nav">
 				<div class="page-nav__wrapper page-nav__wrapper--closed">
 					<a href="index.html" class="main-logo">
 						Pink
@@ -26,45 +26,48 @@
 					<li class="main-menu__item"><a href="#">Отзывы</a></li>
 					<li class="main-menu__item"><a href="#">Конкурс</a></li>
 				</ul>
-			</nav>	
-			<h1>Взгляните на жизнь иначе!</h1>
-			<div class="page-header__picture"></div>
+			</nav> 	
+			<div class="page-header__wrapper">
+				<h1>Взгляните на жизнь иначе!</h1>
+				<div class="page-header__picture"></div>
+			</div>
 		</header>
 
 		<!-- Jombotron -->
 		<section class="jombotron">
-			<div class="jombotron__text">
-				<a class="load-link" href="#">Скачать приложение</a>
-				<ul class="os">
-					<li class="os__apple"></li>
-					<li class="os__android"></li>
-					<li class="os__windows"></li>
-				</ul>
-				<p>Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
-			</div>
+			<a class="load-link" href="#">Скачать приложение</a>
+			<ul class="os">
+				<li class="os__apple"></li>
+				<li class="os__android"></li>
+				<li class="os__windows"></li>
+			</ul>
+			<p>Доступно для iPhone, iPad, Android, Windows Phone, OS&nbsp;X, Windows&nbsp;8</p>
 		</section>		
 
 	<!-- Offer -->
 	<div class="page-wrapper">
-		<section class="offer">
-			<h2 class="offer__header">Устали от серости мегаполиса? Нам есть, что вам предложить!</h2>
+		<section class="offer"> 
+			<div class="offer__header">
+				<p>Устали от серости мегаполиса?</p> 
+				<p>Нам есть, что вам предложить!</p>
+			</div>
 			<ul class="features">
 				<li class="features__item">
-					<h3>Поднимает настроение</h3>
+					<h2>Поднимает настроение</h2>
 					<p>Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
 				</li>
 				<li class="features__item">
-					<h3>Меняет мир вокруг</h3>
+					<h2>Меняет мир вокруг</h2>
 					<p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
 				</li>
 				<li class="features__item">
-					<h3>Заводит новых друзей</h3>
+					<h2>Заводит новых друзей</h2>
 					<p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
 				</li>
 			</ul>
 			<article class="research">
 				<div class="research__wrapper">
-					<h3>Эффект на 24 часа!</h3>
+					<h2>Эффект на 24 часа!</h2>
 					<p>Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
 					<a href="#">Узнать больше об исследовании</a>
 				</div>
@@ -73,12 +76,26 @@
 
 	<!-- Review -->
 		<section class="review">
-			<div class="review__wrapper">
+			<div class="review__item">
 				<p class="review__text">
 				Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
 				</p>
 				<p class="review__author-name">Николай Петров</p>
 				<p class="review__author-profession">25 лет, водитель трамвая</p>
+			</div>
+			<div class="review__item">
+				<p class="review__text">
+				Cерая скука и скучная серость - это не для меня! А вот это приложение - точно для меня!
+				</p>
+				<p class="review__author-name">Федор Михайлов</p>
+				<p class="review__author-profession">27 лет, учитель</p>
+			</div>
+			<div class="review__item">
+				<p class="review__text">
+				Когда серое становится розовым, жизнь превращается в праздник! Это приложение дарит удивительное ощущение праздника.
+				</p>
+				<p class="review__author-name">Ольга Васильева</p>
+				<p class="review__author-profession">35 лет, консультант</p>
 			</div>
 			<div class="review__slider"></div>
 		</section>
@@ -86,6 +103,11 @@
 		<!-- Edition -->
 		<section class="edition">
 			<table class="table-edition">
+				<colgroup>
+    				<col class="table-edition__col1">
+    				<col class="table-edition__col2">
+    				<col class="table-edition__col3">
+ 				 </colgroup>
 				<tr>
 					<th class="table-edition__first-cell"></th>
 					<th class="table-edition__header">
@@ -102,22 +124,49 @@
 					</th>
 				</tr>
 				<tr>
-					<td>Розовый фильтр</td>
-					<td class="table-edition__yes">&#x2713;</td>
-					<td class="table-edition__yes">&#x2713;</td>
-					<td class="table-edition__yes">&#x2713;</td>
+					<td class="table-edition__app-feature">Розовый фильтр</td>
+					<td>
+						<div class="table-edition__hint">Розовый фильтр</div>
+						<div class="table-edition__yes">&#x2713;</div>
+					</td>
+					<td>
+						<div class="table-edition__hint">Розовый фильтр</div>
+						<div class="table-edition__yes">&#x2713;</div>
+					</td>
+					<td>
+						<div class="table-edition__hint">Розовый фильтр</div>
+						<div class="table-edition__yes">&#x2713;</div>
+					</td>
 				</tr>
 				<tr>
-					<td>Смайлики</td>
-					<td class="table-edition__no">&#x2715;</td>
-					<td class="table-edition__yes">&#x2713;</td>
-					<td class="table-edition__yes">&#x2713;</td>
+					<td class="table-edition__app-feature">Смайлики</td>
+					<td>
+						<div class="table-edition__hint">Смайлики</div>
+						<div class="table-edition__no">&#x2715;</div>
+					</td>
+					<td>
+						<div class="table-edition__hint">Смайлики</div>
+						<div class="table-edition__yes">&#x2713;</div>
+						</td>
+					<td>
+						<div class="table-edition__hint">Смайлики</div>
+						<div class="table-edition__yes">&#x2713;</div>
+					</td>
 				</tr>
 				<tr>
-					<td>Комментарии</td>
-					<td class="table-edition__no">&#x2715;</td>
-					<td class="table-edition__no">&#x2715;</td>
-					<td class="table-edition__yes">&#x2713;</td>
+					<td class="table-edition__app-feature">Комментарии</td>
+					<td>
+						<div class="table-edition__hint">Комментарии</div>
+						<div class="table-edition__no">&#x2715;</div>
+						</td>
+					<td>
+						<div class="table-edition__hint">Комментарии</div>
+						<div class="table-edition__no">&#x2715;</div>
+						</td>
+					<td>
+						<div class="table-edition__hint">Комментарии</div>
+						<div class="table-edition__yes">&#x2713;</div>
+					</td>
 				</tr>
 			</table>
 			<div class="edition-slider">
@@ -165,6 +214,7 @@
 		</footer>
 
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	
 <!--Google map-->
 	<script>
 		function initialize() {

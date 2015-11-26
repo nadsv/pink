@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -368,14 +369,20 @@ body {
   font-family: "Open Sans", Arial, sans-serif; }
 
 ul {
-  list-style: none; }
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+p {
+  padding: 0;
+  margin: 0; }
 
 a {
   text-decoration: none; }
 
 /*Mobile*/
 .page-wrapper {
-  width: 320px;
+  min-width: 320px;
   margin: 0 auto; }
 
 /*Tablet*/
@@ -391,10 +398,11 @@ a {
   @media (-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 2.5dppx) {
     .page-header {
       background-image: url("../img/background-mobile@3x.jpg"); } }
-  .page-header h1 {
+  .page-header__wrapper {
     min-width: 320px;
-    padding: 0 2.63rem;
-    margin-top: 1.56rem;
+    padding: 0 2.63rem; }
+  .page-header h1 {
+    margin: 1.56rem auto 0 auto;
     color: white;
     text-align: center;
     font-size: 1.5rem;
@@ -404,7 +412,7 @@ a {
     left: 25%;
     bottom: 0;
     min-width: 320px;
-    min-height: 17.81rem;
+    min-height: 285px;
     margin-left: -6.5rem;
     background: transparent url("../img/iphone-hand-mobile@1x.png") no-repeat 50% 50%;
     background-size: auto 100%; }
@@ -463,7 +471,6 @@ a {
     position: relative; }
     .page-nav__toggle > span:before, .page-nav__toggle > span:after {
       width: 100%;
-      height: 4px;
       height: 0.25rem;
       background: white;
       position: absolute;
@@ -472,11 +479,9 @@ a {
       -webkit-transform-origin: 50% 50%;
               transform-origin: 50% 50%; }
     .page-nav__toggle > span:before {
-      top: 10px;
-      top: 0.625rem; }
+      top: 0.63rem; }
     .page-nav__toggle > span:after {
-      top: -10px;
-      top: -0.625rem; }
+      top: -0.63rem; }
   .page-nav__toggle:hover > span {
     background: #d22856; }
     .page-nav__toggle:hover > span:before, .page-nav__toggle:hover > span:after {
@@ -539,9 +544,19 @@ a {
     display: none; }
 
 .jombotron {
+  min-height: 16.88rem;
+  padding-top: 1.88rem;
   background-color: #1d2631;
   color: white;
-  text-align: center; }
+  text-align: center;
+  min-width: 320px; }
+  .jombotron p {
+    display: inline-block;
+    padding: 0 2.44rem;
+    font-weight: 100;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin: 1.69rem 0 0 0; }
 
 .load-link {
   display: inline-block;
@@ -552,10 +567,179 @@ a {
   color: white;
   font-weight: bold;
   text-align: center;
-  padding-top: 11.6px;
+  padding-top: 0.72rem;
+  margin-bottom: 1.875rem;
   font-size: 1.13rem; }
   .load-link:hover {
     background-color: white;
     color: #d22856; }
   .load-link:active {
     color: rgba(210, 40, 86, 0.3); }
+
+.os {
+  margin-right: -1.94rem; }
+  .os li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1.94rem; }
+  .os__apple {
+    width: 46.21px;
+    height: 56.753px;
+    background: url("../img/sprites/os-sprite.svg") 0 0 no-repeat; }
+  .os__android {
+    width: 42.084px;
+    height: 47.041px;
+    background: url("../img/sprites/os-sprite.svg") 50.8271371376% 0 no-repeat; }
+  .os__windows {
+    width: 43.922px;
+    height: 41.992px;
+    background: url("../img/sprites/os-sprite.svg") 99.1198724713% 0 no-repeat; }
+
+.offer {
+  text-align: center; }
+  .offer__header {
+    padding: 2rem 3.44rem 0.31rem 3.44rem; }
+    .offer__header p {
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+      padding-bottom: 1.875rem; }
+
+.features {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #f2f2f2 url(../img/bg-white-mask.svg) no-repeat 0px 0px;
+  background-size: 100% auto;
+  padding: 4.06rem 1.44rem 0 1.44rem; }
+  .features__item h2 {
+    font-size: 1.125rem;
+    line-height: 1.25rem; }
+  .features__item p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    padding-bottom: 0.8rem;
+    color: #283645; }
+  .features::after {
+    content: '';
+    display: block;
+    width: 9.875rem;
+    height: 17.375rem;
+    margin: 1.875rem auto 0 auto;
+    background: transparent url("../img/iphone-screen-tablet-3@1x.png") no-repeat 0 0;
+    background-size: cover; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+      .features::after {
+        background-image: url("../img/iphone-screen-tablet-3@2x.png"); } }
+
+.research {
+  display: none; }
+
+.review {
+  text-align: center;
+  padding: 0.625rem 1.25rem 0 1.25rem; }
+  .review__item {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 1.3125rem; }
+  .review__text {
+    font-size: 0.875rem;
+    line-height: 1.875rem;
+    color: #283645;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2; }
+    .review__text::before {
+      content: "«";
+      display: inline-block;
+      margin-right: -0.1875rem; }
+    .review__text::after {
+      content: "»";
+      display: inline-block;
+      margin-left: -0.1875rem; }
+  .review__author-name {
+    font-size: 1.125rem;
+    line-height: 3.25rem;
+    font-weight: bold;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1; }
+  .review__author-profession {
+    display: none; }
+
+.table-edition {
+  margin-left: -16.25rem;
+  margin-right: -16.25rem; }
+  .table-edition__col1, .table-edition__col3 {
+    width: 17.5rem; }
+  .table-edition__col2 {
+    width: 60%; }
+  .table-edition td {
+    border: 0.125rem solid #e5e5e5;
+    height: 3.8125rem;
+    min-width: 17.5rem; }
+  .table-edition__app-feature, .table-edition__first-cell {
+    display: none; }
+  .table-edition__header {
+    position: relative;
+    width: 14.875rem;
+    height: 6.25rem;
+    background-color: #283645;
+    border-right: 0.125rem solid #f2f2f2;
+    color: white;
+    text-transform: uppercase; }
+  .table-edition__title {
+    font-size: 1.125rem;
+    line-height: 1.875rem; }
+  .table-edition__price {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    font-weight: 100; }
+  .table-edition__header--hit:after {
+    content: "хит";
+    position: absolute;
+    top: 1.0625rem;
+    left: 0.6875rem;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    color: white;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    z-index: 10; }
+  .table-edition__header--hit:before {
+    content: "";
+    position: absolute;
+    top: -3.125rem;
+    left: -3.125rem;
+    width: 6.3125rem;
+    height: 6.3125rem;
+    border-style: solid;
+    border-width: 1.875rem;
+    border-color: transparent #d22856 transparent transparent;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .table-edition__yes {
+    float: right;
+    color: #3dc644;
+    font-size: 1.625rem;
+    line-height: 4rem;
+    margin-right: 1.125rem; }
+  .table-edition__no {
+    float: right;
+    color: #f36735;
+    font-size: 1.625rem;
+    line-height: 4.375rem;
+    margin-right: 1.125rem; }
+  .table-edition__hint {
+    float: left;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    color: #283645;
+    margin: 1.375rem; }

@@ -1,0 +1,47 @@
+.offer {
+	text-align: center;
+
+	&__header {
+		padding: (32/16+rem) 3.44rem 0.31rem 3.44rem;
+
+		p {
+			@include font (24, 30);
+			padding-bottom: (30/16+rem);
+		}
+	}
+}
+
+
+
+.features {
+	display: flex;
+	flex-direction: column;
+	background: $background-secondary url(../img/bg-white-mask.svg) no-repeat 0px 0px;
+	background-size: 100% auto;
+	padding: 4.06rem 1.44rem 0 1.44rem;
+
+	&__item {
+
+		h2 {
+			@include font (18, 20);
+		}
+
+		p {
+			@include font (14, 24);
+			padding-bottom: 0.8rem;
+			color: $prime-text;
+		}
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		@include size(158, 278);
+		margin: (30/16+rem) auto 0 auto;
+		@include hd-bg ('iphone-screen-tablet-3', 'png', $ver: 2)
+	}
+}
+
+.research {
+	display: none;
+}

@@ -1,0 +1,90 @@
+.table-edition {
+	margin-left: (-260/16+rem);
+	margin-right: (-260/16+rem);
+
+	&__col1,
+	&__col3 {
+		width: (280/16+rem);
+	}
+
+	&__col2 {
+		width: 60%;
+	}
+
+
+	td {
+		border: (2/16+rem) solid $border-color;
+		height: (61/16+rem);
+		min-width: (280/16+rem);
+	}
+
+	&__app-feature,
+	&__first-cell {
+		display: none;
+	}
+
+	&__header {
+		position: relative;
+		@include size(238, 100);
+		background-color: $color-secondary;
+		border-right: (2/16+rem) solid $background-secondary;
+		color: $light-text;
+		text-transform: uppercase;
+	}
+
+
+	&__title {
+		@include font (18,30);
+	}
+
+	&__price {
+		@include font (24,30);
+		font-weight: 100;
+	}
+
+	&__header--hit:after {
+    	content: "хит";
+    	position: absolute;
+    	top: (17/16+rem);
+    	left: (11/16+rem);
+    	text-transform: uppercase;
+    	@include font(14, 14);
+    	color: $light-text;
+    	transform: rotate(-45deg);
+    	z-index: 10;
+	}
+
+	&__header--hit:before {
+  		content: "";
+    	position: absolute;
+    	top: (-50/16+rem);
+    	left: (-50/16+rem);
+    	@include size(101, 101);
+    	border-style: solid;
+    	border-width: (30/16+rem);
+    	border-color: transparent $color-primary transparent transparent;
+    	transform: rotate(45deg);
+	}
+
+	&__yes {
+		float: right;
+		color: #3dc644;
+		@include font(26,64);
+		margin-right: (18/16+rem);
+	}
+
+	&__no {
+		float: right;
+		color: #f36735;
+		@include font(26,70);
+		margin-right: (18/16+rem);
+	}
+
+	&__hint {
+		float: left;
+		@include font(18,30);
+		color: $prime-text;
+		margin: (22/16+rem);
+	}
+
+}

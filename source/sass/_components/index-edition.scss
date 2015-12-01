@@ -1,6 +1,15 @@
+.edition {
+	background-color: $background-secondary;
+	padding-top: (90/16+rem);
+	padding-bottom: (100/16+rem);
+	background: $background-secondary url(../img/bg-white-mask.svg) no-repeat 0px 0px;
+	background-size: 100% auto;
+}
+
 .table-edition {
 	margin-left: (-260/16+rem);
 	margin-right: (-260/16+rem);
+	background-color: $background-primary;
 
 	&__col1,
 	&__col3 {

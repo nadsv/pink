@@ -16,11 +16,13 @@ $color-primary:									#d22856;
 $alpha:											.3;
 $color-primary-transparent:						rgba($color-primary, $alpha);
 $color-secondary:								#283645;
+$color-secondary-transparent:					rgba($color-secondary, $alpha);
 $color-secondary-dark:							#1d2631;
 $background-primary:							white;
 $background-secondary:							darken($background-primary,5%);
 $light-text:									white;
 $prime-text:									$color-secondary;
+$transpatent-text:								$color-secondary-transparent;
 $border-color:									#e5e5e5;		
 
 /*Sizes*/	

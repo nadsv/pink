@@ -1,0 +1,41 @@
+.page-footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	min-width: $sm-screen;
+	height: (150/16+rem);
+
+	&__logo {
+		flex-basis: (145/16+rem);
+		align-items: center;
+		flex-shrink: 0;
+	}
+
+	.socials {
+		flex-basis: (180/16+rem);
+		align-items: center;
+		flex-shrink: 0;
+		display: flex;
+	}
+
+	.copyright {
+		align-items: center;
+		flex-basis: (140/16+rem);
+		color: $prime-text;
+		flex-shrink: 0;
+
+		&:hover {
+			
+			.ha-icon {
+				fill: $prime-text;
+			}
+		}
+
+		&:active {
+			
+			.ha-icon {
+				fill: $transpatent-text;
+			}
+		}
+	}
+}

@@ -14,12 +14,12 @@
     
     &__wrapper {
         min-width: $sm-screen;
-        padding: 0 2.63rem;
+        padding: (24/16+rem) 2.63rem;
         
     }
 
     h1 {
-        margin: 1.56rem auto 0 auto;
+        margin: 0 auto;
 		color: $light-text;
 		text-align: center;
 		font-size: 1.5rem;
@@ -48,27 +48,6 @@
     }
 }
 
-
-.main-logo {
-	position: absolute;
-	display: block;
-	z-index: 10;
-	top: 1.25rem;
-	left: 1.25rem;
-	width: 74.426px;
-	height: 22.859px;
-	background:  url('../img/sprites/logo-sprite.svg') 0 99.81922439715557% no-repeat;
-	font-size: 0;
-
-	&:hover {
-		background-position: 68.10142102903365% 89.66603150914317%;
-	}
-
-	&:active {
-		background-position: 0 89.66603150914317%;
-	}
-}
-
 .page-nav {
  	&__wrapper {
 		position: relative;
@@ -77,6 +56,7 @@
 		background-color: $color-secondary;
 		z-index: 9;
 		box-shadow: 0 1px rgba(0,0,0,1);
+        padding-top: (5/16+rem);
 		
 		&--closed {
 			background-color: rgba(0,0,0,0.3);

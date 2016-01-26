@@ -13,28 +13,93 @@
     }
 
     &:active {
-        color: rgba($light-text, $alpha);;
+        color: rgba($light-text, $alpha);
     }
     
     svg {
         width:100%;
         height: 100%;
     }
-    
-
+     
+    &-icon__glasses,
     &-icon__pink {
         fill: currentColor;
-     }
-
-    &-icon__glasses {
-        display: none;
     }
 
     &--footer {
         color: $prime-text;
+        width: (76/16+rem);
+        margin-right: (20/16+rem);
 
         &:active {
             color: $transpatent-text;
         }
     }
+}
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+
+    .main-logo-tablet {
+        margin-left: (40/16+rem);
+        margin-top: (25/16+rem);
+        @include size(146, 40.375);
+
+        &--footer {
+            margin-left: 0;
+        }
+    }
+}
+
+/*Decktop version*/
+
+@media (min-width: $lg-screen) {
+
+    .main-logo-tablet {
+        display: none;
+    }
+
+    .main-logo-desktop {
+        display: block;
+        @include size(143.3, 40.375);
+        margin-left: (128/16+rem);
+        margin-top: (25/16+rem);
+        color: $light-text;
+
+        &-icon__stars {
+            color: $color-primary;
+        }
+    
+        &:hover {
+            color: $color-primary;
+        }
+    
+        &:active {
+            color: rgba($light-text, $alpha);
+        }
+
+        svg {
+            width:100%;
+            height: 100%;
+        }
+        
+        
+        &-icon__glasses,
+        &-icon__stars,
+        &-icon__pink {
+            fill: currentColor;
+        }
+    
+        &--footer {
+            color: $prime-text;
+            margin: 0;
+    
+            &:active {
+                color: $transpatent-text;
+            }
+        }
+}
+
+
 }

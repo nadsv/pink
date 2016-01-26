@@ -9,19 +9,18 @@
 			<div class="page-header__wrapper">
 				<h1>Взгляните на жизнь иначе!</h1>
 				<div class="page-header__picture"></div>
+				<!-- Jombotron -->
+				<section class="jombotron">
+					<a class="load-link" href="#">Скачать приложение</a>
+					<ul class="os">
+						<li class="os__apple"></li>
+						<li class="os__android"></li>
+						<li class="os__windows"></li>
+					</ul>
+					<p>Доступно для iPhone, iPad, Android, Windows Phone, OS&nbsp;X, Windows&nbsp;8</p>
+				</section>
 			</div>
-		</header>
-
-		<!-- Jombotron -->
-		<section class="jombotron">
-			<a class="load-link" href="#">Скачать приложение</a>
-			<ul class="os">
-				<li class="os__apple"></li>
-				<li class="os__android"></li>
-				<li class="os__windows"></li>
-			</ul>
-			<p>Доступно для iPhone, iPad, Android, Windows Phone, OS&nbsp;X, Windows&nbsp;8</p>
-		</section>		
+		</header>	
 
 	<!-- Offer -->
 	<div class="page-wrapper">
@@ -30,27 +29,29 @@
 				<p>Устали от серости мегаполиса?</p> 
 				<p>Нам есть, что вам предложить!</p>
 			</div>
-			<ul class="features">
-				<li class="features__item">
-					<h2>Поднимает настроение</h2>
-					<p>Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
-				</li>
-				<li class="features__item">
-					<h2>Меняет мир вокруг</h2>
-					<p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
-				</li>
-				<li class="features__item">
-					<h2>Заводит новых друзей</h2>
-					<p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
-				</li>
-			</ul>
-			<article class="research">
-				<div class="research__wrapper">
-					<h2>Эффект на 24 часа!</h2>
-					<p>Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
-					<a href="#">Узнать больше об исследовании</a>
-				</div>
-			</article>
+			<div class="offer__wrapper">
+				<ul class="features">
+					<li class="features__item">
+						<h2>Поднимает настроение</h2>
+						<p>Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+					</li>
+					<li class="features__item">
+						<h2>Меняет мир вокруг</h2>
+						<p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+					</li>
+					<li class="features__item">
+						<h2>Заводит новых друзей</h2>
+						<p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="research">
+			<div class="research__wrapper">
+				<h2>Эффект на 24 часа!</h2>
+				<p>Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
+				<a href="#">Узнать больше об исследовании</a>
+			</div>
 		</section>
 
 	<!-- Review -->
@@ -82,67 +83,70 @@
 		<!-- Edition -->
 		<section class="edition">
 			<table class="table-edition">
-				<colgroup>
-    				<col class="table-edition__col1">
-    				<col class="table-edition__col2">
-    				<col class="table-edition__col3">
- 				 </colgroup>
 				<tr>
-					<th class="table-edition__first-cell"></th>
-					<th class="table-edition__header">
+					<th class="table-edition--first-cell table-edition__col1"></th>
+					<th class="table-edition__header table-edition__col2">
 						<p class="table-edition__title">База</p>
 						<p class="table-edition__price">1,99 USD</p>
 					</th>
-					<th class="table-edition__header table-edition__header--hit">
+					<th class="table-edition__header table-edition__col3">
+					<th class="table-edition__header table-edition__header--hit table-edition__col4">
 						<p class="table-edition__title">Стандарт</p>
 						<p class="table-edition__price">3,99 USD</p>
 					</th>
-					<th class="table-edition__header">
+					<th class="table-edition__header table-edition__col5"></th>
+					<th class="table-edition__header table-edition__col6">
 						<p class="table-edition__title">Анлим</p>
 						<p class="table-edition__price">9,99 USD</p>
 					</th>
 				</tr>
 				<tr>
-					<td class="table-edition__app-feature">Розовый фильтр</td>
-					<td>
+					<td class="table-edition__col1">Розовый фильтр</td>
+					<td class="table-edition__col2">
 						<div class="table-edition__hint">Розовый фильтр</div>
 						<div class="table-edition__yes">&#x2713;</div>
 					</td>
-					<td>
+					<td class="table-edition__col3"></td>
+					<td class="table-edition__col4">
 						<div class="table-edition__hint">Розовый фильтр</div>
 						<div class="table-edition__yes">&#x2713;</div>
 					</td>
-					<td>
+					<td class="table-edition__col5"></td>
+					<td class="table-edition__col6">
 						<div class="table-edition__hint">Розовый фильтр</div>
 						<div class="table-edition__yes">&#x2713;</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="table-edition__app-feature">Смайлики</td>
-					<td>
+					<td class="table-edition__col1">Смайлики</td>
+					<td class="table-edition__col2">
 						<div class="table-edition__hint">Смайлики</div>
 						<div class="table-edition__no">&#x2715;</div>
 					</td>
-					<td>
+					<td class="table-edition__col3"></td>
+					<td class="table-edition__col4">
 						<div class="table-edition__hint">Смайлики</div>
 						<div class="table-edition__yes">&#x2713;</div>
 						</td>
-					<td>
+					<td class="table-edition__col5"></td>
+					<td class="table-edition__col6">
 						<div class="table-edition__hint">Смайлики</div>
 						<div class="table-edition__yes">&#x2713;</div>
 					</td>
 				</tr>
 				<tr>
-					<td class="table-edition__app-feature">Комментарии</td>
-					<td>
+					<td class="table-edition__col1">Комментарии</td>
+					<td class="table-edition__col2">
+						<div class="table-edition__hint">Комментарии</div>
+						<div class="table-edition__no">&#x2715;</div>
+					</td>
+					<td class="table-edition__col3"></td>
+					<td class="table-edition__col4">
 						<div class="table-edition__hint">Комментарии</div>
 						<div class="table-edition__no">&#x2715;</div>
 						</td>
-					<td>
-						<div class="table-edition__hint">Комментарии</div>
-						<div class="table-edition__no">&#x2715;</div>
-						</td>
-					<td>
+					<td class="table-edition__col5"></td>
+					<td class="table-edition__col6">
 						<div class="table-edition__hint">Комментарии</div>
 						<div class="table-edition__yes">&#x2713;</div>
 					</td>

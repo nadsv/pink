@@ -23,3 +23,61 @@
     }
 }
 
+@mixin placeholder ($input, $color) {
+        #{$input}::-webkit-input-placeholder {color: $color;}
+        #{$input}::-moz-placeholder          {color: $color;}
+        #{$input}:-moz-placeholder           {color: $color;}
+        #{$input}:-ms-input-placeholder      {color: $color;}
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin radio ($class-input,
+              $class-label,
+              $color-center: black,
+              $color-background: white,
+              $color-border: black,
+              $radius: 1rem,
+              $width: 5rem,
+              $margin-bottom: 1rem,
+              $space-between: 2rem,
+              $transition: off
+              ) {
+    
+    $border-width: (0.5*$radius+rem);
+    
+    #{$class-input} {
+        display: none;
+    }
+
+    #{$class-label} {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: $margin-bottom;
+        width: $width;
+    }
+
+    #{$class-label}:before {
+        content: "";
+        display: inline-block;
+        @include size ($radius, $radius);
+        margin-right: $space-between;
+        vertical-align: middle;
+        border: (10/16+rem) solid $color-background;
+        box-shadow: 0 0 0 (2/16+rem) $border-color;
+        background: $color-background;
+        border-radius: 50%;
+        cursor: pointer;
+        @if $transition == on {transition: all .2s ease-in-out;}
+    }
+
+    #{$class-input}:checked + #{$class-label}:before {
+         background: $color-center;
+    }
+}
+

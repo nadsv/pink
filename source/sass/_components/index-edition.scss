@@ -7,34 +7,32 @@
 }
 
 .table-edition {
-	margin-left: (-260/16+rem);
-	margin-right: (-260/16+rem);
 	background-color: $background-primary;
+	margin: 0 auto;
 
 	&__col1,
-	&__col3 {
-		width: (280/16+rem);
+	&__col2,
+	&__col6 {
+		display: none;
 	}
 
-	&__col2 {
-		width: 60%;
+	&__col3, 
+	&__col5 {
+		width: (20/16+rem);
 	}
 
+	&__col4 {
+		min-width: (280/16+rem);
+	}
 
 	td {
 		border: (2/16+rem) solid $border-color;
 		height: (61/16+rem);
-		min-width: (280/16+rem);
-	}
-
-	&__app-feature,
-	&__first-cell {
-		display: none;
 	}
 
 	&__header {
 		position: relative;
-		@include size(238, 100);
+		height: (100/16+rem);
 		background-color: $color-secondary;
 		border-right: (2/16+rem) solid $background-secondary;
 		color: $light-text;
@@ -51,7 +49,11 @@
 		font-weight: 100;
 	}
 
-	&__header--hit:after {
+	&__header--hit{
+		background: linear-gradient(-45deg, 
+                    $color-secondary 81%, $color-primary 0, $color-primary 93%, 
+                    $color-secondary 0);
+		&:before {
     	content: "хит";
     	position: absolute;
     	top: (17/16+rem);
@@ -62,8 +64,9 @@
     	transform: rotate(-45deg);
     	z-index: 10;
 	}
+}
 
-	&__header--hit:before {
+/*	&__header--hit:before {
   		content: "";
     	position: absolute;
     	top: (-50/16+rem);
@@ -73,20 +76,24 @@
     	border-width: (30/16+rem);
     	border-color: transparent $color-primary transparent transparent;
     	transform: rotate(45deg);
-	}
+	}*/
 
 	&__yes {
 		float: right;
-		color: #3dc644;
-		@include font(26,64);
+		@include size(30, 24);
+		@include font(0,0);
 		margin-right: (18/16+rem);
+		margin-top: (22/16+rem);
+		background: url("../img/sprites/sprite.svg") 51.53776647367893% 48.654065554561996% no-repeat;
 	}
 
 	&__no {
 		float: right;
-		color: #f36735;
-		@include font(26,70);
+		@include size(30, 30);
+		@include font(0,0);
 		margin-right: (18/16+rem);
+		margin-top: (22/16+rem);
+		background: url("../img/sprites/sprite.svg") 51.226611226611226% 70.62803445575568% no-repeat;
 	}
 
 	&__hint {

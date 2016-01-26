@@ -4,14 +4,14 @@
 	<div class="container">
 
 <!-- Header -->
-	<header class="page-header">
+	<header class="page-header  page-header--narrow">
 
 <!-- Nav -->
 @@include("nav.html")	
 
 <!-- Jombotron -->
-		<section class="jombotron">
-			<div class="jombotron__text">
+		<section class="promo">
+			<div class="promo__text">
 				<h1>Конкурс на самое безбашенное путешествие с Пинк</h1>
 			</div>
 		</section>
@@ -21,118 +21,120 @@
 	<section class="info">
 		<p class="info__text">
 			Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! 
-			<span class="prize__fill-form">Пожалуйста, заполните форму ниже:</span>
+		<span class="info__fill-form">Пожалуйста, заполните форму ниже:</span>
 		</p>
 	</section>
 
-	<form action="get" class="review">
-		<fieldset class="review-fldset  review-fldset--name">
+	<form action="get" class="review-form">
+		<div class="review-fldset">
 			<div class="review__field-group">
 				<label for="first-name" class="review__input_label">Имя:*</label>
-				<input type="text" class="review__input" id="first-name">
+				<input type="text" class="review__input" id="first-name" placeholder="Введите ваше имя">
 			</div>
 			<div class="review__field-group">
 				<label for="last-name" class="review__input_label">Фамилия:*</label>
-				<input type="text" class="review__input" id="last-name">
+				<input type="text" class="review__input" id="last-name" placeholder="Укажите фамилию">
 			</div>
 			<div class="review__field-group">
 				<label for="patronymic" class="review__input_label">Отчество:*</label>
-				<input type="text" class="review__input" id="patronymic">
+				<input type="text" class="review__input" id="patronymic" placeholder="Ну и отчество тоже">
 			</div>
-		</fieldset>
+		</div>
 
-		<fieldset class="review-fldset review-fldset--application">
-			<legend class="review__legend">С каким приложением путешествовали? *</legend>
+		<div class="review-fldset review-fldset--application  review-fldset--strip">
+			<h2 class="review__legend">С каким приложением путешествовали? *</h2>
 			<div class="review__field-group">
-				<input type="radio" class="review__radio" value="iOS" checked>
-				<label for="" class="review__radio_label">Pink для iOS</label>
+				<input type="radio" class="review__radio" name="application" id="chkiOS" value="iOS" checked>
+				<label for="chkiOS" class="review__radio_label">Pink для iOS</label>
 			</div>
 			<div class="review__field-group">
-				<input type="radio" class="review__radio" value="Android">
-				<label for="" class="review__radio_label">Pink на Android</label>
+				<input type="radio" class="review__radio" name="application" id="chkAndroid" value="Android">
+				<label for="chkAndroid" class="review__radio_label">Pink на Android</label>
 			</div>
 			<div class="review__field-group">
-				<input type="radio" class="review__radio" value="Windows">
-				<label for="" class="review__radio_label">Windows Phone</label>
+				<input type="radio" class="review__radio" name="application" id="chkWindows" value="Windows">
+				<label for="chkWindows" class="review__radio_label">Windows Phone</label>
 			</div>
-		</fieldset>
+		</div>
 
-		<fieldset class="review-fldset review-fldset--duration">
-			<legend class="review__legend">Когда вы путешествовали? *</legend>
+		<div class="review-fldset  review-fldset--duration">
+			<h2 class="review__legend">Когда вы путешествовали? *</h2>
 			<div class="review__field-group">
 				<input type="date" class="review__input" for="begin-journey">
 				<label for="" class="review__input_label review__input_label--bottom" id="begin-journey">Дата выезда</label>
 			</div>
-			<div class="review__field-group">
-				<button class="change-value">-</button>
-				<input type="number" id="duration" class="review__input" id="duration">
+			<div class="review__field-group  review__field-group--with-buttons">
+				<button type="button" class="change-value">&ndash;</button>
+				<input type="text" id="duration" class="review__input  review__input--small" id="duration" value="10 дней" readonly>
+				<button type="button" class="change-value">+</button>
 				<label for="duration" class="review__input_label review__input_label--bottom">Продолжительность</label>
-				<button class="change-value">+</button>
 			</div>
 			<div class="review__field-group">
-				<input type="date" class="review__input" for="end-journey">
+				<input type="date" class="review__input" for="end-journey" readonly>
 				<label for="" class="review__input_label review__input_label--bottom" id="end-journey">Дата возвращения</label>
 			</div>
-		</fieldset>
+		</div>
 
-		<fieldset class="review-fldset review-fldset--travelers">
-			<legend class="review__legend">Количество попутчиков *</legend>
-			<div class="review__field-group">
-				<button class="change-value">-</button>
-				<input type="number" id="duration" class="review__input" id="travelers">
-				<button class="change-value">+</button>
+		<div class="review-fldset review-fldset--travelers  review-fldset--strip">
+			<h2 class="review__legend">Количество попутчиков *</h2>
+			<div class="review__field-group review__field-group--with-buttons">
+				<button type="button" class="change-value">&ndash;</button>
+				<input type="text" id="duration" class="review__input  review__input--small" id="travelers" value="2 чел." readonly>
+				<button type="button" class="change-value">+</button>
 			</div>
-			<hr class="review__line">
-			<div class="review__field-group">
-				<label for="traveler-1" class="input__label">№</label>
+			<hr class="line">
+			<div class="review__field-group review__field-group--with-numbers">
+				<label for="traveler-1" class="review__input_label">№</label>
 				<input type="text" class="review__input review__input--square" value="1" id="traveler-1" readonly>
 			</div>
-			<div class="review__field-group">
-				<label for="traveler-name" class="input__label">Имя:*</label>
-				<input type="text" class="review__input" value="1" id="traveler-name">
+			<div class="review__field-group  review__field-group--medium">
+				<label for="traveler-name" class="review__input_label">Имя:*</label>
+				<input type="text" class="review__input" id="traveler-name" placeholder="Введите ваше имя">
 			</div>
-			<div class="review__field-group">
-				<label for="traveler-nick" class="input__label">Прозвище</label>
-				<input type="text" class="review__input" value="1" id="traveler-nick">
+			<div class="review__field-group  review__field-group--medium">
+				<label for="traveler-nick" class="review__input_label">Прозвище:</label>
+				<input type="text" class="review__input" id="traveler-nick" placeholder="Ну какже без этого!">
 			</div>
 			<div class="review__field-group">
 				<button class="del-traveler">Удалить</button>
 			</div>
-		</fieldset>
+		</div>
 
-		<fieldset class="review-fldset review-fldset--achievments">
-			<legend class="review__legend">Ваши безбашенные достижения в путешествии</legend>
+		<div class="review-fldset review-fldset--achievments">
+			<h2 class="review__legend">Ваши безбашенные достижения в путешествии</h2>
 			<div class="review__field-group">
 				<input type="checkbox" id="photo-with-shark" class="review__checkbox" checked>
-				<label for="photo-with-shark" class="checkbox__label">Сделал селфи с акулой</label>
+				<label for="photo-with-shark" class="review__checkbox-label">Сделал селфи с акулой</label>
 			</div>
 			<div class="review__field-group">
 				<input type="checkbox" id="sunburn" class="review__checkbox">
-				<label for="sunburn" class="checkbox__label">Обгорел на пляже</label>
+				<label for="sunburn" class="review__checkbox-label">Обгорел на пляже</label>
 			</div>
 			<div class="review__field-group">
 				<input type="checkbox" id="Chuck-Norris" class="review__checkbox">
-				<label for="Chuck-Norris" class="checkbox__label">Видел Чака Норриса</label>
+				<label for="Chuck-Norris" class="review__checkbox-label">Видел Чака Норриса</label>
 			</div>
 			<div class="review__field-group">
 				<input type="checkbox" id="souvenir" class="review__checkbox">
-				<label for="souvenir" class="checkbox__label">Накупил сувениров</label>
+				<label for="souvenir" class="review__checkbox-label">Накупил сувениров</label>
 			</div>
 			<div class="review__field-group">
 				<input type="checkbox" id="not-to-go-crazy" class="review__checkbox">
-				<label for="not-to-go-crazy" class="checkbox__label">Удержал башню</label>
+				<label for="not-to-go-crazy" class="review__checkbox-label">Удержал башню</label>
 			</div>
 			<div class="review__field-group">
 				<input type="checkbox" id="destroy-hotel" class="review__checkbox">
-				<label for="destroy-hotel" class="checkbox__label">Разгромил отель</label>
+				<label for="destroy-hotel" class="review__checkbox-label">Разгромил отель</label>
 			</div>
-		</fieldset>
+		</div>
 
-		<fieldset class="review-fldset review-fldset--load-photo">
+		<div class="review-load-photo  review-fldset--strip">
             
-            <h2>Загрузите фотографии</h2>
+            <h2 class="review__legend">Ваши фотографии из поездки *</h2>
             
-            <button type="button" class="btn btn--load" >Выбрать фотографии</button>
+            <button type="button" class="btn  btn--white" >Загрузить фото</button>
+
+            <hr class="line">
 
             <div class="review__gallery">
                 <div class="review__loaded-photo">
@@ -179,10 +181,12 @@
                 </div>
             </div>
 
-         </fieldset>  
+         </div>  
 
-         <button class="btn btn--send" type="submit">Отправить отзыв</button>
-         <p class="review__descr"><span>*</span> &ndash; обязательные для заполнения поля</p>
+         <footer class="review-form__footer">
+         	<button class="btn btn--green" type="submit">Отправить форму</button>
+         	<p class="review__descr"><span class="review__astray">*</span> &ndash; обязательные <span class="hidden">для заполнения</span> поля</p>
+         </footer>
 	</form>
 
 <!--Modal Messages-->

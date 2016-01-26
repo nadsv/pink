@@ -1,0 +1,20 @@
+.answer {
+	min-width: $sm-screen;
+	text-align: center;
+	box-shadow: 0 0 15px 7px $background-secondary;
+	padding-bottom: (35/16+rem);
+
+	.wrapper {
+		padding: (35/16+rem) (30/16+rem);
+	}
+
+	h2 {
+		@include font(18,24);
+		color: $popup-header;
+	}
+
+	p {
+		@include font(14,24);
+		color: $prime-text;
+	}
+}

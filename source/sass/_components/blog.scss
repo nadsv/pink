@@ -1,0 +1,75 @@
+.blog {
+	min-width: $sm-screen;
+	padding-left: (20/16+rem);
+	padding-right: (20/16+rem);
+	color: $prime-text;
+
+	.line {
+		margin: (25/16+rem) 0 0 0;
+	}
+}
+
+.blog__header {
+	text-align: left;
+
+	h2 {
+		@include font(18, 27);
+		padding-bottom: (5/16+rem);
+		padding-top: (40/16+rem);
+		margin: 0;
+	}
+
+}
+
+.blog__date {
+		text-transform: uppercase;
+		color: $color-primary;
+		@include font(14,30);
+		padding-bottom: (10/16+rem);
+	}
+
+.blog__about {
+		@include font(16,27);
+}
+
+
+
+.blog-paginator {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	min-width: $sm-screen;
+	padding-left: 0;
+	padding-right: (20/16+rem);
+	padding-top: (50/16+rem);
+
+	a {
+		display: block;
+		@include size(62, 62);
+		text-transform: uppercase;
+		@include font(18,56);
+		font-weight: bold;
+		border: 2px solid $border-color;
+		color: $prime-text;
+		transition: all .2s ease-in-out; 
+		flex-grow: 0;
+		text-align: center;
+		margin-left: (20/16+rem);
+		margin-bottom: (20/16+rem);
+
+		&:hover {
+			border: 2px solid $color-secondary-dark;	
+		}
+	
+		&:active {
+			color: $light-text;
+			background-color: $color-secondary-dark;
+			border: 2px solid $color-secondary-dark;	
+		}
+	}
+
+	.blog-paginator__item--chosen {
+		border-color: $color-primary;
+	}
+}

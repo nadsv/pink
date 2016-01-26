@@ -29,11 +29,24 @@ a {
 	display: none;
 }
 
+.hidden {
+	display: none;
+}
+
 /*Mobile*/
 .page-wrapper {
 	min-width: $sm-screen;
 	margin: 0 auto;
 }
+
+.line {
+	width: 100%;
+	height: (2/16+rem);
+	background-color: $border-color;
+	border: 0;
+	margin-bottom: (20/16+rem);
+}
+
 
 /*Tablet*/
 

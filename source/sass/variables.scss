@@ -12,6 +12,10 @@ $md-screen: 700px;
 $lg-screen: 1200px;
 
 /*Colors*/
+$green:											#2aab6d;
+$green-dark: 									#1c9b5e;
+$green-blur:									#7abc98;
+$grey:											#ffffff;
 $color-primary:									#d22856;
 $alpha:											.3;
 $color-primary-transparent:						rgba($color-primary, $alpha);
@@ -22,8 +26,14 @@ $background-primary:							white;
 $background-secondary:							darken($background-primary,5%);
 $light-text:									white;
 $prime-text:									$color-secondary;
+$grey-text: 									#8a8a8a;
+$btn-text:										$green-blur;
+$popup-header:									black;
 $transpatent-text:								$color-secondary-transparent;
-$border-color:									#e5e5e5;		
+$border-color:									#e5e5e5;
+$btn-color:										$green;	
+$btn-hover-color:								$green-dark;			
 
 /*Sizes*/	
 $mobile-menu-item-height:		4.06rem;
+$input-height: 					(63/16+rem);

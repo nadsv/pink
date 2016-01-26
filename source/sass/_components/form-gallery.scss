@@ -1,0 +1,60 @@
+.review-load-photo {
+	padding: (40/16+rem) (20/16+rem)(5/16+rem) ;
+	min-width: $sm-screen;
+	text-align: center;
+
+	.line {
+		margin-top: (33/16+rem);
+	}
+}
+
+.review__gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	flex-direction: row;
+	padding-top: (15/16+rem);
+	margin-left: (-20/16+rem);
+	min-width: $sm-screen;
+}
+
+.review__loaded-photo {
+	display: inline-block;
+	position: relative;
+	width: (84/16+rem);
+	text-align: left;
+	padding-bottom: (25/16+rem);
+	margin-left: (20/16+rem);
+
+	p {
+		text-transform: uppercase;
+		@include font(12, 18);
+	}
+
+}
+
+.review__delete-photo {
+	position: absolute;
+	display: block;
+	z-index: 10;
+	top: (-16/16+rem);;
+	right: 0;
+	@include size(32,32);
+	border: 2px solid $border-color;
+	color: $grey-text;
+	border-radius: 50%;
+	background-color: $background-primary;
+	@include font(17, 27);
+	text-align: center;
+	transition: all .2s ease-in-out; 
+
+	&:hover {
+			border: 2px solid $color-secondary-dark;	
+		}
+	
+	&:active {
+			color: $light-text;
+			background-color: $color-secondary-dark;
+			border: 2px solid $color-secondary-dark;	
+	}
+}

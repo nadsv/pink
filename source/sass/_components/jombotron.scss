@@ -5,6 +5,7 @@
 	color: $light-text;
 	text-align: center;
 	min-width: $sm-screen;
+	width: 100%;
 
 	p {
 		display: inline-block;
@@ -39,29 +40,58 @@
 }
 
 .os {
-	margin-right: -1.94rem;
+	margin-left: -1.94rem;
 
 	li {
 		display: inline-block;
 		vertical-align: middle;
-		margin-right: 1.94rem;
+		margin-left: 1.94rem;
 	}
 
 	&__apple {
-		width: 46.21px;
-		height: 56.753px;
-		background: url("../img/sprites/os-sprite.svg") 0 0 no-repeat;
+		width: 56.21px;
+		height: 66.75px;
+		background: url("../img/sprites/sprite.svg") 68.1809587651902% 29.040622299049264% no-repeat;
 	}
 
 	&__android {
-		width: 42.084px;
-		height: 47.041px;
-		background: url("../img/sprites/os-sprite.svg") 50.827137137577544% 0 no-repeat;
+		width: 52.08px;
+		height: 57.04px;
+		background: url("../img/sprites/sprite.svg") 77.29382850901148% 28.0974043350281% no-repeat;
 	}
 
 	&__windows {
-		width: 43.922px;
-		height: 41.992px;
-		background: url("../img/sprites/os-sprite.svg") 99.11987247131728% 0 no-repeat;
+		width: 53.92px;
+		height: 51.99px;
+		background: url("../img/sprites/sprite.svg") 86.45391042322969% 27.630670043748562% no-repeat;
+	}
+}
+
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+	.jombotron {
+		position: relative;
+		z-index: 2;
+		width: (305/16+rem);
+		margin-top: (-370/16+rem);
+		margin-left: (15/16+rem);
+		background: none;
+	}
+}
+
+/*Desktop version*/
+
+@media (min-width: $lg-screen) {
+	.load-link {
+		width: (300/16+rem);
+		@include font(21,23);
+	}
+
+	.jombotron {
+		margin-top: (-400/16+rem);
+		margin-left: (130/16+rem);
+		background: none;
 	}
 }

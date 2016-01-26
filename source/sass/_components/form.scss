@@ -1,0 +1,297 @@
+.review-fldset {
+	display: flex;
+  	flex-flow: row wrap;
+  	justify-content: space-between;
+  	min-width: $sm-screen;
+  	padding-left: (20/16+rem);
+  	padding-right: (20/16+rem);
+
+  	&--strip {
+  		background-color: $background-secondary;
+  	}
+}
+
+.review__field-group{
+	flex-basis: 100%;
+	min-width: (280/16+rem);
+	display: inline-block;
+	padding-bottom: (20/16+rem);
+
+	&--medium {
+		flex-basis: auto;
+		min-width: 0;
+		width: calc(100% - (1 * #{$input-height}));
+	}
+}
+
+.review__field-group--with-buttons {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	font-size: 0;
+	vertical-align: top;
+}
+
+.review__field-group--with-numbers {
+	flex-basis: $input-height;
+	min-width: $input-height;
+}
+
+.review__legend {
+	@include font(14, 18);
+	color: $color-primary;
+	text-transform: uppercase;
+	font-weight: normal;
+	flex-basis: 100%;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: (40/16+rem);;
+}
+
+.review__input_label {
+	display: block;
+	@include font(14, 30);
+	color: $color-primary;
+	text-align: left;
+	margin-left: (20/16+rem);
+	text-transform: uppercase;
+
+	&--bottom {
+		text-align: center;
+		margin-left: 0;	
+		margin-top: 5px;
+	}
+}
+
+
+.review__input {
+	width: 100%;
+	height: $input-height;
+	border: 2px solid $border-color;
+	padding: 0 (20/16+rem);
+	@include font(18, 30);
+	outline: none;
+	transition: all .2s ease-in-out;
+
+	&:hover {
+		border-color: $color-secondary-dark;
+	}
+
+	&:focus {
+		border-color: $color-primary;
+	}
+
+	&--small {
+		width: calc(100% - (2 * #{$input-height}));
+		border-left: none;
+		border-right: none;
+	}
+
+
+	&[readonly] {
+		background-color: $background-secondary;
+	}
+
+	&--square {
+		height: $input-height;
+		width: $input-height;
+		padding: 0;
+		text-align: center;
+		border-right: none;
+	}
+}
+
+@include placeholder ('.review__input', $prime-text);
+
+.review-fldset--application {
+	padding-top: (40/16+rem);
+	padding-bottom: (5/16+rem);
+}
+
+@include radio ('.review__radio',
+            '.review__radio_label',
+            $color-primary,
+            $background-primary,
+            $border-color,
+            36,
+            (280/16+rem),
+            (37/16+rem),
+            (20/16+rem),
+            on);
+
+.review__radio_label:hover::before {
+    box-shadow: 0 0 0 (2/16+rem) $color-secondary-dark;
+}
+
+.review__radio_label:active::before {
+    box-shadow: 0 0 0 (2/16+rem) $color-primary;
+}
+
+
+.review-fldset--duration {
+	padding-top: (50/16+rem);
+	padding-bottom: (5/16+rem);
+
+}
+
+
+.change-value {
+	display: inline-block;
+	height: $input-height;
+	width: $input-height;
+	@include font(48,48);
+	font-weight: lighter;
+	outline: 0;
+	border: 2px solid $border-color;
+	background-color: $background-primary;
+
+	&:hover {
+		border-color: $color-secondary-dark;
+	}
+
+	&:focus {
+		border-color: $color-secondary-dark;
+		background-color: $color-secondary-dark;
+		color: $light-text;
+	}
+}
+
+.review-fldset--travelers {
+	justify-content: flex-end;
+	background-color: $background-secondary;
+	padding-top: (40/16+rem);
+	margin-bottom: (50/16+rem);
+}
+
+.del-traveler {
+	display: none;
+}
+
+.review__checkbox {
+	display: none; 
+
+	&-label {
+		position: relative;
+		display: inline-block;
+  		vertical-align: top;
+  		margin-bottom: 2.3125rem;
+  		padding-left: (60/16+rem);
+  		width: 17.5rem;
+  		cursor: pointer;
+	}
+
+	&-label:before {
+		content: '';
+		display: inline-block;
+		position: absolute;
+		top: (-8/16+rem);;
+		left: 0;
+		@include font(25, 30);
+		color: $color-primary;
+		text-align: center;
+		@include size(38, 38);
+		margin-right: 1.25rem;
+		border: 2px solid $border-color;
+		transition: all .2s ease-in-out; 
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*hack IE10+*/
+			padding-top: 15px;
+		}
+		
+	}
+
+	&-label:hover::before {
+		border-color: $color-secondary-dark; 	
+	}
+
+	&-label:active::before {
+		border-color: $color-primary; 	
+	}
+
+	&:checked + &-label:before {
+		content: "\2713";
+	}
+}
+
+
+.review__descr {
+	text-transform: uppercase;
+	@include font(14, 30);
+	margin-top: (25/16+rem);
+}
+
+.review__astray {
+	color: $color-primary;
+}
+
+.review-form__footer {
+	padding: (50/16+rem) (20/16+rem) (30/16+rem);
+	min-width: $sm-screen;
+	text-align: center;
+}
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+	.review-fldset {
+		margin: 0 40px;
+		padding-left: 0;
+  		padding-right: 0;
+	}
+
+	.review-fldset--strip {
+  		background: none;
+  	}
+
+  	.review-fldset--application,
+  	.review-fldset--duration,
+  	.review-fldset--travelers,
+  	.review-fldset--achievments {
+  			position: relative;
+  			border: 2px solid $border-color;
+  			margin-top: 40px;
+  			padding-left: 60px;
+  			padding-right: 60px;
+  			margin-bottom: 60px;
+
+  		.review__legend {
+  			display: block;
+  			padding: 0 15px;
+  			width: 420px;
+  			margin-left: -210px;
+  			background-color: $light-text;
+  			position: absolute;
+  			top: -10px;
+  			left: 50%;
+  		}
+  	}
+
+  	.review-fldset--duration {
+  		padding-right: 40px;
+  		.review__field-group {
+  			padding-right: 20px;
+  			flex-basis: 50%;
+  			min-width: 0;
+  		}
+  	}
+
+  	.review-fldset--achievments {
+  		padding-top: 50px;
+  	}
+
+  	.del-traveler {
+  		display: block;
+  		outline: none;
+  		border: none;
+  		background: none;
+
+  		&:hover {
+  			text-decoration: underline;
+  			color: $color-primary;
+  		}
+
+  		&:active {
+  			color: $color-primary-transparent;
+  		}
+  	}
+
+ }

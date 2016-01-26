@@ -1,41 +1,82 @@
 .page-footer {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-around;
+	align-items: center;
 	min-width: $sm-screen;
-	height: (150/16+rem);
+	min-height: (150/16+rem);
+	padding: (20/16+rem)  (40/16+rem);
 
-	&__logo {
-		flex-basis: (145/16+rem);
-		align-items: center;
-		flex-shrink: 0;
+}
+
+
+.copyright {
+	color: $prime-text;
+	@include font(14,18);
+
+	& > span {
+		vertical-align: middle;
+		padding-right: (10/16+rem);
 	}
 
-	.socials {
-		flex-basis: (180/16+rem);
-		align-items: center;
-		flex-shrink: 0;
+	& > svg {
+		vertical-align: middle;
+	}
+
+	&:hover {
+		
+		.ha-icon {
+			fill: $prime-text;
+		}
+	}
+
+	&:active {
+		
+		.ha-icon {
+			fill: $transpatent-text;
+		}
+	}
+}
+
+.socials {
 		display: flex;
+		width: (180/16+rem);
+		align-items: center;
+		justify-content: space-between;
+		margin: (20/16+rem) (20/16+rem);;
 	}
 
-	.copyright {
-		align-items: center;
-		flex-basis: (140/16+rem);
-		color: $prime-text;
-		flex-shrink: 0;
+.socials__item {
+	@include font(0,0);
+	@include size(52,52);
+	border-radius: 50%;
+	border: 3px solid $transpatent-text;
 
-		&:hover {
-			
-			.ha-icon {
-				fill: $prime-text;
-			}
-		}
+	&:hover {
+		border-color: $color-secondary;
+	}
 
-		&:active {
-			
-			.ha-icon {
-				fill: $transpatent-text;
-			}
+	&:active {
+		border-color: $background-secondary;
+
+		.social-icon  {
+			fill: $color-primary-transparent;
 		}
+	}
+
+	&--tw {
+		padding-top: (11/16+rem);
+		padding-left: (9/16+rem);
+	}
+
+	&--fb {
+		padding-top: (8/16+rem);
+		padding-left: (12/16+rem);
+	}
+
+	&--yt {
+		padding-top: (11/16+rem);
+		padding-left: (12/16+rem);
 	}
 }

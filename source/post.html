@@ -4,14 +4,14 @@
 	<div class="container">
 
 <!-- Header -->
-	<header class="page-header">
+	<header class="page-header  page-header--narrow">
 
 <!-- Nav -->
 @@include("nav.html")	
 
 <!-- Jombotron -->
-		<section class="jombotron">
-			<div class="jombotron__text">
+		<section class="promo">
+			<div class="promo__text">
 				<h1>Блог путешественников, пользователей Пинк</h1>
 			</div>
 		</section>	
@@ -21,8 +21,9 @@
 	<article class="post">
 		<header class="post__header">
 			<h2>Антон и Надя в Тайланде</h2>
+			<p class = "post__date">Опубликовано: 6 месяцев назад</p>
 			<p class="post__about">Читайте рассказ о том, как семейная пара посещала Тайланд, стараясь максимально избегать избитых туристических мест и районов.</p>
-			<p class="post__date">Опубликовано: 6 месяцев назад</p>
+			<hr class="line">
 		</header>
 		<section class="post__sct">
 			<h3>Предыстория</h3>
@@ -35,9 +36,9 @@
 			<p class="post__p">В Тайланде огромный разброс по стоимости отелей и так же сильно отличаются и они сами. Так как достопримечательности щедро разбросаны по всей стране, то чтобы посетить их все, нужно пожить в нескольких разных городах. В итоге мы остановились на следующих:
 			</p>
 			<ul class="post__list">
-				<li class="post__item">Point Yamu by Como (Пхукет)</li>
-				<li class="post__item">Amari Vogue Hotel (Краби)</li>
-				<li class="post__item">Photo Hotel (Пхукет)</li>
+				<li class="post__item"><span>Point Yamu by Como (Пхукет)</span></li>
+				<li class="post__item"><span>Amari Vogue Hotel (Краби)</span></li>
+				<li class="post__item"><span>Photo Hotel (Пхукет)</span></li>
 			</ul>
 			<p class="post__p">
 				В выборе отелей мы учитывали как расположение, так и отзывы на Tripadvisor. Например, вот, что пишут люди про Point Yamu:	
@@ -47,7 +48,7 @@
 				<cite>Олег, г. Москва</cite>
 			</blockquote>
 		</section>
-		<section class="post__sect">
+		<section class="post__sct">
 			<h3>Местная еда</h3>
 			<p class="post__p">
 				Существует мнение, что вся еда в Тайланде экстремально острая. Это мнение сложилось не напрасно! Но не стоит делать из этого проблему — просто попросите сделать ваше блюдо «not spicy». Желающие могут попробовать жареных тараканчиков. Мы не рискнули.
@@ -56,9 +57,9 @@
 	</article>
 
 	<div class="post-paginator">
-		<span class="post-paginator__prev"><a href="#">Пред.</a></span>
-		<span class="post-paginator__return"><a href="#">Назад к списку</a></span>
-		<span class="post-paginator__next"><a href="">След.</a></span>
+		<a class="post-paginator__prev" href="#">Пред.</a>
+		<a class="post-paginator__return" href="#">Назад к списку</a>
+		<a class="post-paginator__next" href="#">След.</a>
 	</div>
 
 <!-- Footer -->

@@ -1,0 +1,47 @@
+.wrapper-btn {
+	width: 100%;
+	padding-top: (50/16+rem);
+	padding-bottom: (50/16+rem);
+	background-color: $background-secondary;
+}
+
+.btn {
+	width: (280/16+rem);
+	padding: (17/16+rem) 0;
+	text-transform: uppercase;
+	@include font(18,30);
+	font-weight: bold;
+	outline: 0;
+	border: 0;
+	transition: all .2s ease-in-out; 
+
+	&--green {
+		background-color: $btn-color;
+		color: $light-text;
+
+		&:hover {
+			background-color: $btn-hover-color;	
+		}
+	
+		&:active {
+			color: $btn-text;
+			background-color: $btn-hover-color;	
+		}
+	}
+
+	&--white {
+		background-color: $background-primary;
+		color: $prime-text;
+		border: 2px solid $border-color;
+
+		&:hover {
+			border: 2px solid $color-secondary-dark;	
+		}
+	
+		&:active {
+			color: $light-text;
+			background-color: $color-secondary-dark;
+			border: 2px solid $color-secondary-dark;	
+		}
+	}
+}

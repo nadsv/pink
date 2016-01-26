@@ -33,6 +33,17 @@
 		color: $color-primary;
 	}
 
+	&__detail-item a {
+		&:hover {
+			color: $prime-text;
+			text-decoration: underline;
+		}
+
+		&:active {
+			color: $transpatent-text;
+		}
+	}
+
 	&__detail-item h3 {
 		margin-top: (20/16+rem);
 		margin-bottom: (5/16+rem); 

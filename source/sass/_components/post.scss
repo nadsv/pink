@@ -1,0 +1,121 @@
+.post {
+	min-width: $sm-screen;
+	padding-left: (20/16+rem);
+	padding-right: (20/16+rem);
+}
+
+.post__header {
+	text-align: center;
+
+	h2 {
+		@include font(30, 36);
+		padding-top: (35/16+rem);
+		padding-bottom: (25/16+rem);
+		margin: 0;
+	}
+
+	.line {
+		margin-top: (30/16+rem);
+		margin-bottom: (35/16+rem);
+	}
+
+}
+
+.post__date {
+		text-transform: uppercase;
+		color: $color-primary;
+		@include font(14,30);
+		padding-bottom: (25/16+rem);
+	}
+
+.post__about {
+		@include font(16,27);
+}
+
+.post__sct {
+	h3 {
+		@include font(18, 30);
+		text-transform: uppercase;
+		padding-bottom: (30/16+rem);
+		margin: 0;
+	}
+}
+
+.post__p {
+	@include font(14, 27);
+	padding-bottom: (45/16+rem);
+}
+
+.post__list {
+	@include font(14, 27);
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+.post__item {
+	color: $color-primary;
+	padding-bottom: (35/16+rem);
+
+	span {
+		color: $prime-text;
+	}
+}
+
+.post_q {
+	border-left: 2px solid $color-primary;
+	margin-left: 0;
+	padding-left: (20/16+rem); 
+	@include font(14, 27);
+	margin-bottom: (45/16+rem);
+
+	cite {
+		color: $grey-text;
+	}
+}
+
+.post-paginator {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	min-width: $sm-screen;
+	padding-left: 0;
+	padding-right: (20/16+rem);
+
+	a {
+		padding: (17/16+rem) 0;
+		text-transform: uppercase;
+		@include font(18,30);
+		font-weight: bold;
+		border: 2px solid $border-color;
+		color: $prime-text;
+		transition: all .2s ease-in-out; 
+		flex-grow: 1;
+		text-align: center;
+		margin-left: (20/16+rem);
+		margin-bottom: (20/16+rem);
+
+		&:hover {
+			border: 2px solid $color-secondary-dark;	
+		}
+	
+		&:active {
+			color: $light-text;
+			background-color: $color-secondary-dark;
+			border: 2px solid $color-secondary-dark;	
+		}
+	}
+}
+
+.post-paginator__prev {
+	order: 1;
+}
+
+.post-paginator__next {
+	order: 2;
+}
+
+.post-paginator__return {
+	order: 3;
+	flex-basis: 100%;
+}

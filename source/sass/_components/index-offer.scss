@@ -9,6 +9,11 @@
 			padding-bottom: (30/16+rem);
 		}
 	}
+
+	&__wrapper {
+		background: $background-secondary url(../img/bg-white-mask.svg) no-repeat 0 0;
+		background-size: 100% auto;
+	}
 }
 
 
@@ -16,8 +21,6 @@
 .features {
 	display: flex;
 	flex-direction: column;
-	background: $background-secondary url(../img/bg-white-mask.svg) no-repeat 0 0;
-	background-size: 100% auto;
 	padding: 4.06rem 1.44rem 0 1.44rem;
 
 	&__item {
@@ -44,4 +47,228 @@
 
 .research {
 	display: none;
+}
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+	.offer {
+
+		&__header {
+			padding: (60/16+rem) (20/16+rem);;
+
+			p {
+				@include font (40, 50);
+				padding-bottom: (0/16+rem);
+			}
+
+			p:last-child {
+				display: inline-block;
+				width: (350/16+rem);
+			}
+		}
+	}
+
+	.features {
+		position: relative;
+		padding-left: (350/16+rem);
+		padding-right: (40/16+rem);
+		padding-bottom: (20/16+rem);
+		text-align: left;
+		min-height: (480/16+rem);
+		width: $md-screen;
+		margin: 0 auto;
+
+		&::after {
+			display: none;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: (40/16+rem);
+			@include size(268, 481);
+			@include hd-bg ('iphone-screen-tablet-3', 'png', $ver: 2)
+		}
+	}
+
+	.research {
+		display: block;
+		margin-top: (55/16+rem);
+		min-height: (360/16+rem);
+
+		&__wrapper {
+			position: relative;
+			width: $md-screen;
+			margin: 0 auto;
+			padding-left: (350/16+rem);
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: (40/16+rem);
+				@include size(260, 300);
+				background: url("../img/sprites/sprite.svg") 0 0 no-repeat;
+				background-size: auto 100%;
+			}
+
+			&::after {
+				content: '24';
+				display: block;
+				position: absolute;
+				left: (62/16+rem);
+				top: (62/16+rem);
+				@include size(214, 214);
+				@include font(104, 180);
+				font-weight: bold;
+				color: $color-primary;
+				background-color: $grey; 
+				text-align: center;
+				border: (11/16+rem) solid $color-primary;
+				border-radius: 50%;
+			}
+		}
+
+		h2 {
+			padding-top: (40/16+rem);
+			padding-bottom: (25/16+rem);
+			margin: 0;
+			@include font(30, 36);
+		}
+
+		p {
+			@include font(14, 24);
+			padding-bottom: (22/16+rem);
+		} 
+
+		a {
+			@include font(14, 24);
+			color: $color-primary;
+			text-decoration: underline;
+		}
+	}
+	
+}
+
+/*Desktop version*/
+
+@media (min-width: $lg-screen) {
+
+	.offer {
+
+		&__header {
+			padding: (75/16+rem) (20/16+rem);;
+	
+			p {
+				@include font (50, 60);
+				padding-bottom: (0/16+rem);
+			}
+	
+			p:last-child {
+				display: inline-block;
+				width: (420/16+rem);
+			}
+		}
+	}
+
+	.features {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0;
+		width: (890/16+rem);
+		margin: 0 auto;
+
+		&__item {
+			display: inline-block;
+			text-align: center;
+			flex-basis: 33.333%;
+
+			h2 {
+				@include font (30, 30);
+				padding: (332/16+rem) (40/16+rem) 0 (40/16+rem);
+			}
+	
+			p {
+				@include font (18, 30);
+				padding: 0 (20/16+rem);
+			}
+		}
+
+		&__item:nth-child(1) {
+			@include hd-bg ('iphone-screen-desktop-1', 'png', $ver: 2);
+			background-size: 100% auto;
+		}
+
+		&__item:nth-child(2) {
+			@include hd-bg ('iphone-screen-desktop-2', 'png', $ver: 2);
+			background-size: 100% auto;
+		}
+
+		&__item:nth-child(3) {
+			@include hd-bg ('iphone-screen-desktop-3', 'png', $ver: 2);
+			background-size: 100% auto;
+		}
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.research {
+		margin-top: 0;
+		padding-top: (70/16+rem);
+		min-height: (480/16+rem);
+		background-color: $background-secondary;
+
+		&__wrapper {
+			width: $lg-screen;
+			margin: 0 auto;
+			padding-left: (495/16+rem);
+			padding-right: (190/16+rem);
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute; 
+				left: (130/16+rem);
+				@include size(308, 355.1);
+				background: url("../img/sprites/sprite.svg") 0 0 no-repeat;
+				background-size: auto 100%;
+			}
+
+			&::after {
+				content: '24';
+				display: block;
+				position: absolute;
+				left: (162/16+rem);
+				top: (78/16+rem);
+				@include size(245, 245);
+				@include font(120, 210);
+				font-weight: bold;
+				color: $color-primary;
+				background-color: $grey; 
+				text-align: center;
+				border: (11/16+rem) solid $color-primary;
+				border-radius: 50%;
+			}
+		}
+
+		h2 {
+			padding-top: (40/16+rem);
+		}
+
+		p {
+			@include font(18, 30);
+			padding-bottom: (40/16+rem);
+		} 
+
+		a {
+			@include font(18, 30);
+		}
+	}
+	
 }

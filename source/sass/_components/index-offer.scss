@@ -119,8 +119,11 @@
 				content: '24';
 				display: block;
 				position: absolute;
-				left: (62/16+rem);
-				top: (62/16+rem);
+				left: 62px;
+				top: 62px;
+				@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   					padding-top: 90px;
+   				}
 				@include size(214, 214);
 				@include font(104, 180);
 				font-weight: bold;
@@ -254,6 +257,9 @@
 				text-align: center;
 				border: (11/16+rem) solid $color-primary;
 				border-radius: 50%;
+				@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   					padding-top: 105px;
+   				}
 			}
 		}
 

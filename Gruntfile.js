@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         processors: [
             require('postcss-pxtorem')({
                 unitPrecision: 3,
-                propWhiteList: [],
+                propWhiteList: ['font', 'font-size', 'line-height', 'letter-spacing'],
                 selectorBlackList: [],
                 replace: true,
                 mediaQuery: false

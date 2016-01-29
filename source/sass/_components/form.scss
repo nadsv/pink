@@ -288,6 +288,45 @@
   		}
   	}
 
+  	.review-fldset--travelers {
+  		justify-content: flex-start;
+
+  		.review__field-group--with-buttons {
+  			justify-content: flex-start;
+  		}
+
+  		.review__input--small  {
+  			width: 130px;
+  		}
+
+  		.review__field-group--medium {
+  			flex-basis: 298px;
+			.review__input {
+				width: 296px;
+			}
+  		}
+
+  		.review__field-group {
+  			&--with-numbers {
+  				order: 1;
+  			}
+
+  			&--name {
+  				order: 2;
+  			}
+
+  			&--delete {
+  				flex-basis: 70px;
+  				order: 3;
+  			}
+
+  			&--nick {
+  				order: 4;
+  			}
+  		}
+
+  	}
+
   	.review-fldset--achievments {
   		padding-top: 50px;
   	}

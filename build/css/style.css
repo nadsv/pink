@@ -1579,6 +1579,41 @@ a {
                 flex-basis: calc(50% - 20px); } }
 
 @media (min-width: 700px) {
+  .review-fldset--travelers {
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    .review-fldset--travelers .review__field-group--with-buttons {
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; }
+    .review-fldset--travelers .review__input--small {
+      width: 130px; }
+    .review-fldset--travelers .review__field-group--medium {
+      -webkit-flex-basis: 298px;
+          -ms-flex-preferred-size: 298px;
+              flex-basis: 298px; }
+      .review-fldset--travelers .review__field-group--medium .review__input {
+        width: 296px; }
+    .review-fldset--travelers .review__field-group--with-numbers {
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1; }
+    .review-fldset--travelers .review__field-group--name {
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; }
+    .review-fldset--travelers .review__field-group--delete {
+      -webkit-flex-basis: 70px;
+          -ms-flex-preferred-size: 70px;
+              flex-basis: 70px;
+      -webkit-order: 3;
+          -ms-flex-order: 3;
+              order: 3; }
+    .review-fldset--travelers .review__field-group--nick {
+      -webkit-order: 4;
+          -ms-flex-order: 4;
+              order: 4; }
   .review-fldset--achievments {
     padding-top: 50px; }
   .del-traveler {

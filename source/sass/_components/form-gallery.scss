@@ -21,7 +21,7 @@
 .review__loaded-photo {
 	display: inline-block;
 	position: relative;
-	width: (84/16+rem);
+	width: 84px;
 	text-align: left;
 	padding-bottom: (25/16+rem);
 	margin-left: (20/16+rem);
@@ -37,7 +37,7 @@
 	position: absolute;
 	display: block;
 	z-index: 10;
-	top: (-16/16+rem);;
+	top: (-16/16+rem);
 	right: 0;
 	@include size(32,32);
 	border: 2px solid $border-color;
@@ -57,4 +57,60 @@
 			background-color: $color-secondary-dark;
 			border: 2px solid $color-secondary-dark;	
 	}
+}
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+	.review__gallery {
+		margin-left: -68px;
+	}
+
+  	.review-load-photo  {
+  		position: relative;
+  		border: 2px solid $border-color;
+  		margin: 0 40px;
+  		padding: 40px 60px 20px 60px;
+  	}
+
+  	.review__legend {
+  		display: block;
+  		padding: 0 15px;
+  		width: 420px;
+  		margin-left: -210px;
+  		background-color: $light-text;
+  		position: absolute;
+  		top: -10px;
+  		left: 50%;
+  	}
+
+  	.review__loaded-photo {
+		margin-left: 68px;
+		width: 120px;
+
+  		img{
+  			@include size(120, 120);
+  		}
+
+  		p {
+  			@include font(14, 14);
+  		}
+  	}
+
+  	.review__delete-photo {
+  		@include size(52, 52);
+  		@include font(25, 50);
+  		top: -26px;
+		right: -26px;
+  	}
+
+  	.review-form__footer {
+  		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+  		margin: 0 40px;
+  		padding: 40px 0 20px 0;
+  	}
+
+
 }

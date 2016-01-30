@@ -9,6 +9,8 @@
   	&--strip {
   		background-color: $background-secondary;
   	}
+
+  	@include font(18, 18);
 }
 
 .review__field-group{
@@ -290,6 +292,7 @@
 
   	.review-fldset--travelers {
   		justify-content: flex-start;
+  		padding-bottom: 30px;
 
   		.review__field-group--with-buttons {
   			justify-content: flex-start;
@@ -316,12 +319,16 @@
   			}
 
   			&--delete {
+  				min-width: 0;
   				flex-basis: 70px;
+  				margin-left: 50px;
+  				margin-top: 50px;
   				order: 3;
   			}
 
   			&--nick {
   				order: 4;
+  				margin-left: 62px;
   			}
   		}
 
@@ -346,5 +353,4 @@
   			color: $color-primary-transparent;
   		}
   	}
-
  }

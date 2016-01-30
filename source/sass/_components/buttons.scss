@@ -45,3 +45,11 @@
 		}
 	}
 }
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+	.btn--white {
+		width: 100%;
+	}
+}

@@ -396,7 +396,7 @@ a {
   height: 0.125rem;
   background-color: #e5e5e5;
   border: 0;
-  margin-bottom: 1.25rem; }
+  margin-bottom: 2.1875rem; }
 
 /*Tablet*/
 /*Desktop*/
@@ -1311,7 +1311,9 @@ a {
           justify-content: space-between;
   min-width: 320px;
   padding-left: 1.25rem;
-  padding-right: 1.25rem; }
+  padding-right: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.125rem; }
   .review-fldset--strip {
     background-color: #f2f2f2; }
 
@@ -1582,7 +1584,8 @@ a {
   .review-fldset--travelers {
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
-            justify-content: flex-start; }
+            justify-content: flex-start;
+    padding-bottom: 30px; }
     .review-fldset--travelers .review__field-group--with-buttons {
       -webkit-justify-content: flex-start;
           -ms-flex-pack: start;
@@ -1604,16 +1607,20 @@ a {
           -ms-flex-order: 2;
               order: 2; }
     .review-fldset--travelers .review__field-group--delete {
+      min-width: 0;
       -webkit-flex-basis: 70px;
           -ms-flex-preferred-size: 70px;
               flex-basis: 70px;
+      margin-left: 50px;
+      margin-top: 50px;
       -webkit-order: 3;
           -ms-flex-order: 3;
               order: 3; }
     .review-fldset--travelers .review__field-group--nick {
       -webkit-order: 4;
           -ms-flex-order: 4;
-              order: 4; }
+              order: 4;
+      margin-left: 62px; }
   .review-fldset--achievments {
     padding-top: 50px; }
   .del-traveler {
@@ -1654,7 +1661,7 @@ a {
 .review__loaded-photo {
   display: inline-block;
   position: relative;
-  width: 5.25rem;
+  width: 84px;
   text-align: left;
   padding-bottom: 1.5625rem;
   margin-left: 1.25rem; }
@@ -1685,6 +1692,53 @@ a {
     color: white;
     background-color: #1d2631;
     border: 2px solid #1d2631; }
+
+/*Tablet version*/
+@media (min-width: 700px) {
+  .review__gallery {
+    margin-left: -68px; }
+  .review-load-photo {
+    position: relative;
+    border: 2px solid #e5e5e5;
+    margin: 0 40px;
+    padding: 40px 60px 20px 60px; }
+  .review__legend {
+    display: block;
+    padding: 0 15px;
+    width: 420px;
+    margin-left: -210px;
+    background-color: white;
+    position: absolute;
+    top: -10px;
+    left: 50%; }
+  .review__loaded-photo {
+    margin-left: 68px;
+    width: 120px; }
+    .review__loaded-photo img {
+      width: 7.5rem;
+      height: 7.5rem; }
+    .review__loaded-photo p {
+      font-size: 0.875rem;
+      line-height: 0.875rem; }
+  .review__delete-photo {
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.5625rem;
+    line-height: 3.125rem;
+    top: -26px;
+    right: -26px; }
+  .review-form__footer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 40px;
+    padding: 40px 0 20px 0; } }
 
 .answer {
   min-width: 320px;
@@ -1736,6 +1790,11 @@ a {
       color: white;
       background-color: #1d2631;
       border: 2px solid #1d2631; }
+
+/*Tablet version*/
+@media (min-width: 700px) {
+  .btn--white {
+    width: 100%; } }
 
 .post {
   min-width: 320px;

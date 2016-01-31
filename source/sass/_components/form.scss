@@ -354,3 +354,77 @@
   		}
   	}
  }
+
+ /*Desktop version*/
+
+@media (min-width: $lg-screen) {
+	.review-form {
+		width: $lg-screen;
+		padding: 0 132px;
+	}
+
+	.review-fldset {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.review-fldset--name {
+
+		.review__field-group {
+			flex-basis: 296px;
+		}
+	}
+
+	.review-fldset--application,
+	.review-fldset--achievments {
+		padding-right: 0;
+
+		.review__field-group {
+			flex-basis: auto;
+		}
+	}
+
+	.review-fldset--duration {
+		justify-content: space-between;
+
+		.review__field-group {
+			flex-basis: 236px;
+			padding-right: 0;
+		}
+
+		.review__field-group--with-buttons {
+			flex-basis: 247px;
+		}
+
+	}
+
+	.review-fldset--travelers {
+
+		.review__input--square {
+			border-right: 2px solid $border-color;
+		}
+
+		.review__field-group {
+			margin-right: 20px;
+			margin-left: 0;
+
+  			&--with-numbers {
+  				order: 1;
+  			}
+
+  			&--name {
+  				order: 2;
+  			}
+
+  			&--nick {
+  				order: 3;
+  			}
+
+  			&--delete {
+  				order: 4;
+  			}
+		}
+  			
+	}
+
+}

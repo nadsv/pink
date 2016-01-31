@@ -87,6 +87,7 @@
   	.review__loaded-photo {
 		margin-left: 68px;
 		width: 120px;
+		padding-bottom: 45px;
 
   		img{
   			@include size(120, 120);
@@ -112,5 +113,30 @@
   		padding: 40px 0 20px 0;
   	}
 
+
+}
+
+ /*Desktop version*/
+
+@media (min-width: $lg-screen) {
+	.review-load-photo  {
+		margin: 0;
+	}
+
+	.review__gallery {
+		margin-left: -50px;
+	}
+
+	.review__loaded-photo {
+		margin-left: 50px;
+	}
+
+	.review-form__footer {
+		margin: 0;
+	}
+
+	.review__descr .hidden {
+		display: inline;
+	} 
 
 }

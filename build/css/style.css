@@ -1564,15 +1564,15 @@ a {
     padding-left: 0;
     padding-right: 0; }
   .review-fldset--duration {
-    padding-right: 40px;
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
-            justify-content: flex-start; }
+            justify-content: flex-start;
+    padding-left: 40px; }
     .review-fldset--duration .review__field-group {
-      padding-right: 20px;
-      -webkit-flex-basis: 50%;
-          -ms-flex-preferred-size: 50%;
-              flex-basis: 50%;
+      margin-left: 18px;
+      -webkit-flex-basis: 240px;
+          -ms-flex-preferred-size: 240px;
+              flex-basis: 240px;
       min-width: 0; } }
     @media screen and (min-width: 700px) and (-ms-high-contrast: active), (min-width: 700px) and (-ms-high-contrast: none) {
       .review-fldset--duration .review__field-group {
@@ -1648,6 +1648,9 @@ a {
             flex-basis: 296px; }
   .review-fldset--application,
   .review-fldset--achievments {
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     padding-right: 0; }
     .review-fldset--application .review__field-group,
     .review-fldset--achievments .review__field-group {
@@ -1655,14 +1658,12 @@ a {
           -ms-flex-preferred-size: auto;
               flex-basis: auto; }
   .review-fldset--duration {
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
+    padding-left: 15px; }
     .review-fldset--duration .review__field-group {
       -webkit-flex-basis: 236px;
           -ms-flex-preferred-size: 236px;
               flex-basis: 236px;
-      padding-right: 0; }
+      margin-left: 45px; }
     .review-fldset--duration .review__field-group--with-buttons {
       -webkit-flex-basis: 247px;
           -ms-flex-preferred-size: 247px;

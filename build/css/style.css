@@ -393,9 +393,9 @@ a {
 
 .line {
   width: 100%;
-  height: 0.125rem;
-  background-color: #e5e5e5;
-  border: 0;
+  background: none;
+  border: none;
+  border-top: 2px solid #e5e5e5;
   margin-bottom: 2.1875rem; }
 
 /*Tablet*/
@@ -2007,6 +2007,10 @@ a {
     padding-bottom: 0.3125rem;
     padding-top: 2.5rem;
     margin: 0; }
+    .blog__header h2 a {
+      color: #283645; }
+    .blog__header h2 a:hover {
+      color: #d22856; }
 
 .blog__date {
   text-transform: uppercase;
@@ -2032,10 +2036,10 @@ a {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-width: 320px;
-  padding-left: 0;
-  padding-right: 1.25rem;
-  padding-top: 3.125rem; }
+  width: 280px;
+  padding: 0;
+  margin-left: 1.25rem;
+  margin-top: 3.125rem; }
   .blog-paginator a {
     display: block;
     width: 3.875rem;
@@ -2051,7 +2055,6 @@ a {
         -ms-flex-positive: 0;
             flex-grow: 0;
     text-align: center;
-    margin-left: 1.25rem;
     margin-bottom: 1.25rem; }
     .blog-paginator a:hover {
       border: 2px solid #1d2631; }
@@ -2059,5 +2062,48 @@ a {
       color: white;
       background-color: #1d2631;
       border: 2px solid #1d2631; }
-  .blog-paginator .blog-paginator__item--chosen {
+  .blog-paginator__item--chosen {
     border-color: #d22856; }
+  .blog-paginator__pages {
+    display: none; }
+
+/*Tablet version*/
+@media (min-width: 700px) {
+  .blog {
+    width: 500px;
+    margin: 0 auto; }
+  .line {
+    background: none;
+    border-top: 2px dotted #e5e5e5; }
+  .blog__header {
+    position: relative; }
+    .blog__header::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -60px;
+      top: 40px;
+      width: 2.375rem;
+      height: 2.25rem;
+      background: url(../img/sprites/sprite.svg) 51.3333333333% 59.2125% no-repeat; }
+    .blog__header h2 {
+      font-size: 1.6875rem;
+      line-height: 1.875rem; }
+  .blog__about {
+    font-size: 1.125rem;
+    line-height: 1.875rem; }
+  .blog-paginator {
+    margin: 65px auto 0;
+    width: 350px; }
+    .blog-paginator__pages {
+      display: block;
+      width: 62px;
+      font-size: 1.125rem;
+      line-height: 3.875rem;
+      text-transform: uppercase;
+      font-weight: bold; } }
+
+/*Desktop version*/
+@media (min-width: 1200px) {
+  .blog {
+    width: 820px; } }

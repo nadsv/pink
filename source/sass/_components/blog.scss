@@ -17,6 +17,14 @@
 		padding-bottom: (5/16+rem);
 		padding-top: (40/16+rem);
 		margin: 0;
+
+		a {
+			color: $prime-text;
+		}
+
+		a:hover {
+			color: $color-primary;
+		}
 	}
 
 }
@@ -39,10 +47,10 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: space-between;
-	min-width: $sm-screen;
-	padding-left: 0;
-	padding-right: (20/16+rem);
-	padding-top: (50/16+rem);
+	width: 280px;
+	padding: 0;
+	margin-left: (20/16+rem);
+	margin-top: (50/16+rem);
 
 	a {
 		display: block;
@@ -55,7 +63,6 @@
 		transition: all .2s ease-in-out; 
 		flex-grow: 0;
 		text-align: center;
-		margin-left: (20/16+rem);
 		margin-bottom: (20/16+rem);
 
 		&:hover {
@@ -69,7 +76,70 @@
 		}
 	}
 
-	.blog-paginator__item--chosen {
+	&__item--chosen {
 		border-color: $color-primary;
 	}
+
+	&__pages {
+		display: none;
+	}
+}
+
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+	.blog {
+		width: 500px;
+		margin: 0 auto;
+	}
+
+	.line {
+		background: none;
+		border-top: 2px dotted $border-color;
+	}
+
+	.blog__header {
+		position: relative;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: -60px;
+			top: 40px;
+			@include size(38,36);
+			background: url(../img/sprites/sprite.svg) 51.333333333333336% 59.2125% no-repeat;
+		}
+
+		h2 {
+			@include font(27, 30);
+		}
+	}
+
+	.blog__about {
+		@include font(18,30);
+	}
+
+	.blog-paginator {
+		margin: 65px auto 0;
+		width: 350px;
+
+		&__pages {
+			display: block;
+			width: 62px;
+			@include font(18,62);
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+	}
+}
+
+ /*Desktop version*/
+
+@media (min-width: $lg-screen) {
+	.blog {
+		width: 820px;
+	}
+
 }

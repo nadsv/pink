@@ -42,7 +42,7 @@
 
 
 
-.blog-paginator {
+.blog-paginator__wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -80,9 +80,6 @@
 		border-color: $color-primary;
 	}
 
-	&__pages {
-		display: none;
-	}
 }
 
 
@@ -90,7 +87,7 @@
 
 @media (min-width: $md-screen) {
 	.blog {
-		width: 500px;
+		width: $blog-width-tablet;
 		margin: 0 auto;
 	}
 
@@ -122,12 +119,15 @@
 	}
 
 	.blog-paginator {
+		position: relative;
 		margin: 65px auto 0;
-		width: 350px;
+		width: $blog-width-tablet;
 
-		&__pages {
+		&__wrapper::before {
+			content: 'Стр.';
 			display: block;
-			width: 62px;
+			position: absolute;
+			left: -34px;
 			@include font(18,62);
 			text-transform: uppercase;
 			font-weight: bold;
@@ -138,8 +138,9 @@
  /*Desktop version*/
 
 @media (min-width: $lg-screen) {
-	.blog {
-		width: 820px;
+	.blog,
+	.blog-paginator {
+		width: $blog-width-desktop;
 	}
 
 }

@@ -48,6 +48,7 @@
 
         &--footer {
             margin-left: 0;
+            margin-top: -13px;
         }
     }
 }
@@ -94,6 +95,7 @@
         &--footer {
             color: $prime-text;
             margin: 0;
+            margin-top: -13px;
     
             &:active {
                 color: $transpatent-text;

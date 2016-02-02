@@ -683,7 +683,8 @@ a {
     width: 9.125rem;
     height: 2.5234375rem; }
     .main-logo-tablet--footer {
-      margin-left: 0; } }
+      margin-left: 0;
+      margin-top: -13px; } }
 
 /*Decktop version*/
 @media (min-width: 1200px) {
@@ -709,7 +710,8 @@ a {
       fill: currentColor; }
     .main-logo-desktop--footer {
       color: #283645;
-      margin: 0; }
+      margin: 0;
+      margin-top: -13px; }
       .main-logo-desktop--footer:active {
         color: rgba(40, 54, 69, 0.3); } }
 
@@ -2023,7 +2025,7 @@ a {
   font-size: 1rem;
   line-height: 1.6875rem; }
 
-.blog-paginator {
+.blog-paginator__wrapper {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2040,7 +2042,7 @@ a {
   padding: 0;
   margin-left: 1.25rem;
   margin-top: 3.125rem; }
-  .blog-paginator a {
+  .blog-paginator__wrapper a {
     display: block;
     width: 3.875rem;
     height: 3.875rem;
@@ -2056,16 +2058,14 @@ a {
             flex-grow: 0;
     text-align: center;
     margin-bottom: 1.25rem; }
-    .blog-paginator a:hover {
+    .blog-paginator__wrapper a:hover {
       border: 2px solid #1d2631; }
-    .blog-paginator a:active {
+    .blog-paginator__wrapper a:active {
       color: white;
       background-color: #1d2631;
       border: 2px solid #1d2631; }
-  .blog-paginator__item--chosen {
+  .blog-paginator__wrapper__item--chosen {
     border-color: #d22856; }
-  .blog-paginator__pages {
-    display: none; }
 
 /*Tablet version*/
 @media (min-width: 700px) {
@@ -2093,11 +2093,14 @@ a {
     font-size: 1.125rem;
     line-height: 1.875rem; }
   .blog-paginator {
+    position: relative;
     margin: 65px auto 0;
-    width: 350px; }
-    .blog-paginator__pages {
+    width: 500px; }
+    .blog-paginator__wrapper::before {
+      content: 'Стр.';
       display: block;
-      width: 62px;
+      position: absolute;
+      left: -34px;
       font-size: 1.125rem;
       line-height: 3.875rem;
       text-transform: uppercase;
@@ -2105,5 +2108,6 @@ a {
 
 /*Desktop version*/
 @media (min-width: 1200px) {
-  .blog {
+  .blog,
+  .blog-paginator {
     width: 820px; } }

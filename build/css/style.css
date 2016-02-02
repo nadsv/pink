@@ -1993,6 +1993,28 @@ a {
       -ms-flex-preferred-size: 100%;
           flex-basis: 100%; }
 
+/*Tablet*/
+@media (min-width: 700px) {
+  .post {
+    width: 620px;
+    margin: 0 auto; }
+  .post__header h2 {
+    font-size: 3.125rem;
+    line-height: 3.125rem; }
+  .post__about {
+    font-size: 1.5rem;
+    line-height: 2.5rem; }
+  .post__p,
+  .post__list,
+  .post_q {
+    font-size: 1.125rem;
+    line-height: 1.875rem; } }
+
+/*Desktop*/
+@media (min-width: 1200px) {
+  .post {
+    width: 820px; } }
+
 .blog {
   min-width: 320px;
   padding-left: 1.25rem;

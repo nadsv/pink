@@ -119,3 +119,38 @@
 	order: 3;
 	flex-basis: 100%;
 }
+
+/*Tablet*/
+@media (min-width: $md-screen) {
+	.post {
+		width: $post-width-tablet;
+		margin: 0 auto;
+	}
+
+	.post__header {
+
+		h2 {
+			@include font(50, 50);
+		}
+	}
+
+	.post__about {
+		@include font(24,40);
+	}
+
+	.post__p, 
+	.post__list,
+	.post_q  {
+		@include font(18, 30);
+	}
+
+}
+
+/*Desktop*/
+@media (min-width: $lg-screen) {
+	.post {
+		width: $post-width-desktop;
+	}
+
+	
+}

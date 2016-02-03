@@ -78,9 +78,8 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: space-between;
-	min-width: $sm-screen;
-	padding-left: 0;
-	padding-right: (20/16+rem);
+	width: 280px;
+	margin: 0 auto;
 
 	a {
 		padding: (17/16+rem) 0;
@@ -90,9 +89,7 @@
 		border: 2px solid $border-color;
 		color: $prime-text;
 		transition: all .2s ease-in-out; 
-		flex-grow: 1;
 		text-align: center;
-		margin-left: (20/16+rem);
 		margin-bottom: (20/16+rem);
 
 		&:hover {
@@ -109,10 +106,14 @@
 
 .post-paginator__prev {
 	order: 1;
+	margin-right: 10px;
+	flex-grow: 1;
 }
 
 .post-paginator__next {
 	order: 2;
+	margin-left: 10px;
+	flex-grow: 1;
 }
 
 .post-paginator__return {
@@ -125,23 +126,74 @@
 	.post {
 		width: $post-width-tablet;
 		margin: 0 auto;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.post__header {
+		position: relative;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
 
 		h2 {
+			order: 1;
+			padding-top: 85px;
+			padding-bottom: 30px;
 			@include font(50, 50);
+		}
+
+		.line {
+			position: absolute;
+			bottom: 4px;
+			order: 4;
+			z-index: 1;
 		}
 	}
 
 	.post__about {
 		@include font(24,40);
+		order: 2;
+		padding-bottom: 50px;
+	}
+
+	.post__date {
+		z-index: 2;
+		width: 300px;
+		margin: 0 auto;
+		background-color: $light-background;
+		order: 3;
 	}
 
 	.post__p, 
 	.post__list,
 	.post_q  {
 		@include font(18, 30);
+	}
+
+	.post-paginator {
+		width: $post-width-tablet;
+		margin: 0 auto;
+	}
+
+	.post-paginator__prev {
+		order: 1;
+		width: 136px;
+		flex-grow: 0;
+		margin-right: 20px;
+	}
+
+	.post-paginator__next {
+		order: 3;
+		width: 136px;
+		flex-grow: 0;
+		margin-left: 20px;
+	}
+
+	.post-paginator__return {
+		order: 2;
+		flex-basis: auto;
+		flex-grow: 1;
 	}
 
 }
@@ -151,6 +203,9 @@
 	.post {
 		width: $post-width-desktop;
 	}
-
+	
+	.post-paginator {
+		width: $post-width-desktop;
+	}
 	
 }

@@ -1,38 +1,37 @@
 .edition {
 	background-color: $background-secondary;
-	padding-top: (90/16+rem);
-	padding-bottom: (100/16+rem);
+	padding-top: (100/16+rem);
+	padding-bottom: (40/16+rem);
 	background: $background-secondary url(../img/bg-white-mask.svg) no-repeat 0px 0px;
 	background-size: 100% auto;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 280px;
+		margin: 0 auto;
+	}
 }
 
 .table-edition {
 	background-color: $background-primary;
-	margin: 0 auto;
-
-	&__col1,
-	&__col2,
-	&__col6 {
-		display: none;
-	}
-
-	&__col3, 
-	&__col5 {
-		width: (20/16+rem);
-	}
-
-	&__col4 {
-		min-width: (280/16+rem);
-	}
+	width: 100%;
+	margin: 0 auto 40px auto;
 
 	td {
-		border: (2/16+rem) solid $border-color;
-		height: (61/16+rem);
+		position: relative;
+		border: 2px solid $border-color;
+		height: 61px;
+		width: 25%;
+		@include font(14,58);
+		text-transform: uppercase;
 	}
 
 	&__header {
 		position: relative;
-		height: (100/16+rem);
+		height: 100px;
 		background-color: $color-secondary;
 		border-right: (2/16+rem) solid $background-secondary;
 		color: $light-text;
@@ -49,11 +48,12 @@
 		font-weight: 100;
 	}
 
+
 	&__header--hit{
 		background: linear-gradient(-45deg, 
                     $color-secondary 81%, $color-primary 0, $color-primary 93%, 
                     $color-secondary 0);
-		&:before {
+		&::before {
     	content: "хит";
     	position: absolute;
     	top: (17/16+rem);
@@ -66,41 +66,133 @@
 	}
 }
 
-/*	&__header--hit:before {
-  		content: "";
-    	position: absolute;
-    	top: (-50/16+rem);
-    	left: (-50/16+rem);
-    	@include size(101, 101);
-    	border-style: solid;
-    	border-width: (30/16+rem);
-    	border-color: transparent $color-primary transparent transparent;
-    	transform: rotate(45deg);
-	}*/
-
 	&__yes {
-		float: right;
+		position: absolute;
+		right: 0;
+  		top: 50%; 
+  		transform: translate(0, -50%);
 		@include size(30, 24);
 		@include font(0,0);
 		margin-right: (18/16+rem);
-		margin-top: (22/16+rem);
 		background: url("../img/sprites/sprite.svg") 51.53776647367893% 48.654065554561996% no-repeat;
 	}
 
 	&__no {
-		float: right;
+		position: absolute;
+		right: 0;
+  		top: 50%; 
+  		transform: translate(0, -50%);
 		@include size(30, 30);
 		@include font(0,0);
 		margin-right: (18/16+rem);
-		margin-top: (22/16+rem);
 		background: url("../img/sprites/sprite.svg") 51.226611226611226% 70.62803445575568% no-repeat;
 	}
 
-	&__hint {
-		float: left;
-		@include font(18,30);
-		color: $prime-text;
-		margin: (22/16+rem);
+	&--features {
+		display: none;
+
+		margin-top: 99px;
+
+		td {
+			height: 61px;
+			padding-left: 20px;
+			border-right: none;
+		}
 	}
 
+	td[data-title]::before {
+      content: attr(data-title);
+      display: block;
+      padding-left: 20px;
+      float: left;
+      @include font(14, 60);
+  	}
+
+}
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+	.edition__wrapper { 
+		width: 620px;
+	}
+
+	.table-edition {
+		width: 25%;
+
+		&--features {
+			display: block;
+
+			td {
+				padding-left: 12px;
+			}
+		}
+		
+
+		&__yes {
+			left: 50%;
+  			transform: translate(-50%, -50%);
+		}
+
+		&__no {
+			left: 50%;
+  			transform: translate(-50%, -50%);
+		}
+
+		&__header--hit::before {
+    		top: 9px;
+    		left: 4px;
+		}
+
+		&__title {
+			@include font (16,30);
+		}
+
+		&__price {
+			@include font (18,30);
+		}
+
+		td[data-title]::before {
+      		display: none;
+  		}
+	}
+}
+
+/*Desktop version*/
+
+@media (min-width: $lg-screen) {
+	.edition {
+		padding-top: 120px;
+
+		.edition__wrapper { 
+			width: 940px;
+		}
+	}
+
+	.table-edition {
+
+		td {
+			@include font(18,58);
+		}
+
+		&__header--hit::before {
+    		top: 15px;
+    		left: 10px;
+		}
+
+		&__title {
+			@include font (18,30);
+		}
+
+		&__price {
+			@include font (24,30);
+		}
+
+		&--features {
+
+			td {
+				padding-left: 20px;
+			}
+		}
+	}
 }

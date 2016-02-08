@@ -82,86 +82,94 @@
 
 		<!-- Edition -->
 		<section class="edition">
-			<table class="table-edition">
-				<tr>
-					<th class="table-edition--first-cell table-edition__col1"></th>
-					<th class="table-edition__header table-edition__col2">
-						<p class="table-edition__title">База</p>
-						<p class="table-edition__price">1,99 USD</p>
-					</th>
-					<th class="table-edition__header table-edition__col3">
-					<th class="table-edition__header table-edition__header--hit table-edition__col4">
-						<p class="table-edition__title">Стандарт</p>
-						<p class="table-edition__price">3,99 USD</p>
-					</th>
-					<th class="table-edition__header table-edition__col5"></th>
-					<th class="table-edition__header table-edition__col6">
-						<p class="table-edition__title">Анлим</p>
-						<p class="table-edition__price">9,99 USD</p>
-					</th>
-				</tr>
-				<tr>
-					<td class="table-edition__col1">Розовый фильтр</td>
-					<td class="table-edition__col2">
-						<div class="table-edition__hint">Розовый фильтр</div>
-						<div class="table-edition__yes">&#x2713;</div>
-					</td>
-					<td class="table-edition__col3"></td>
-					<td class="table-edition__col4">
-						<div class="table-edition__hint">Розовый фильтр</div>
-						<div class="table-edition__yes">&#x2713;</div>
-					</td>
-					<td class="table-edition__col5"></td>
-					<td class="table-edition__col6">
-						<div class="table-edition__hint">Розовый фильтр</div>
-						<div class="table-edition__yes">&#x2713;</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-edition__col1">Смайлики</td>
-					<td class="table-edition__col2">
-						<div class="table-edition__hint">Смайлики</div>
-						<div class="table-edition__no">&#x2715;</div>
-					</td>
-					<td class="table-edition__col3"></td>
-					<td class="table-edition__col4">
-						<div class="table-edition__hint">Смайлики</div>
-						<div class="table-edition__yes">&#x2713;</div>
-						</td>
-					<td class="table-edition__col5"></td>
-					<td class="table-edition__col6">
-						<div class="table-edition__hint">Смайлики</div>
-						<div class="table-edition__yes">&#x2713;</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-edition__col1">Комментарии</td>
-					<td class="table-edition__col2">
-						<div class="table-edition__hint">Комментарии</div>
-						<div class="table-edition__no">&#x2715;</div>
-					</td>
-					<td class="table-edition__col3"></td>
-					<td class="table-edition__col4">
-						<div class="table-edition__hint">Комментарии</div>
-						<div class="table-edition__no">&#x2715;</div>
-						</td>
-					<td class="table-edition__col5"></td>
-					<td class="table-edition__col6">
-						<div class="table-edition__hint">Комментарии</div>
-						<div class="table-edition__yes">&#x2713;</div>
-					</td>
-				</tr>
-			</table>
-			<div class="edition-slider">
-				<input type="radio" name="price-toggle" id="price-1" hidden>
-				<input type="radio" name="price-toggle" id="price-2" checked hidden>
-				<input type="radio" name="price-toggle" id="price-3" hidden>
-				<label class="edition-slider__item" for="price-1"></label>
-				<label class="edition-slider__item" for="price-2"></label>
-				<label class="edition-slider__item" for="price-3"></label>
+			<div class="edition__wrapper">
+				<table class="table-edition  table-edition--features">
+						<tr>
+							<td>Розовый фильтр</td>
+						</tr>
+						<tr>
+							<td>Смайлики</td>
+						</tr>
+						<tr>
+							<td>Комментарии</td>
+						</tr>
+				</table>
+				
+				
+					<table class="table-edition">
+						<tr>
+							<th class="table-edition__header ">
+								<p class="table-edition__title">База</p>
+								<p class="table-edition__price">1,99 USD</p>
+							</th>
+						</tr>
+						<tr>
+							<td data-title="Розовый фильтр">
+								<span class="table-edition__yes">&#x2713;</span>
+							</td>
+						</tr>
+						<tr>
+							<td  data-title="Смайлики">
+								<div class="table-edition__no">&#x2715;</div>
+							</td>
+						</tr>
+						<tr>
+							<td  data-title="Комментарии">
+								<div class="table-edition__no">&#x2715;</div>
+							</td>
+						</tr>
+				</table>
+				
+					<table class="table-edition">
+						<tr>
+							<th class="table-edition__header table-edition__header--hit ">
+								<p class="table-edition__title">Стандарт</p>
+								<p class="table-edition__price">3,99 USD</p>
+							</th>
+						</tr>
+						<tr>
+							<td  data-title="Розовый фильтр">
+								<div class="table-edition__yes">&#x2713;</div>
+							</td>
+						</tr>
+						<tr>
+							<td  data-title="Смайлики">
+								<div class="table-edition__yes">&#x2713;</div>
+							</td>
+						</tr>
+						<tr>
+							<td  data-title="Комментарии">
+								<div class="table-edition__no">&#x2715;</div>
+							</td>
+						</tr>
+				</table>
+				
+					<table class="table-edition">
+						<tr>
+							<th class="table-edition__header">
+								<p class="table-edition__title">Анлим</p>
+								<p class="table-edition__price">9,99 USD</p>
+							</th>
+						</tr>
+						<tr>
+							<td  data-title="Розовый фильтр">
+								<div class="table-edition__yes">&#x2713;</div>
+							</td>
+						</tr>
+						<tr>
+							<td  data-title="Смайлики">
+								<div class="table-edition__yes">&#x2713;</div>
+							</td>
+						</tr>
+						<tr>
+							<td data-title="Комментарии">
+								<div class="table-edition__yes">&#x2713;</div>
+							</td>
+						</tr>
+				</table>
 			</div>
+
 		</section>
-	</div>
 
 		<!--Contacts-->                
 		<section class="contacts">

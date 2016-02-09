@@ -12,6 +12,7 @@
 		flex-wrap: wrap;
 		width: 280px;
 		margin: 0 auto;
+		text-transform: uppercase;
 	}
 }
 
@@ -26,7 +27,6 @@
 		height: 61px;
 		width: 25%;
 		@include font(14,58);
-		text-transform: uppercase;
 	}
 
 	&__header {
@@ -35,7 +35,6 @@
 		background-color: $color-secondary;
 		border-right: (2/16+rem) solid $background-secondary;
 		color: $light-text;
-		text-transform: uppercase;
 	}
 
 
@@ -52,7 +51,10 @@
 	&__header--hit{
 		background: linear-gradient(-45deg, 
                     $color-secondary 81%, $color-primary 0, $color-primary 93%, 
-                    $color-secondary 0);
+                    $color-secondary 0) no-repeat;
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*hack IE10+*/
+			height: 101px;
+		}
 		&::before {
     	content: "хит";
     	position: absolute;
@@ -63,6 +65,9 @@
     	color: $light-text;
     	transform: rotate(-45deg);
     	z-index: 10;
+    	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*hack IE10+*/
+			margin-top: 7px;
+		}
 	}
 }
 
@@ -75,6 +80,9 @@
 		@include font(0,0);
 		margin-right: (18/16+rem);
 		background: url("../img/sprites/sprite.svg") 51.53776647367893% 48.654065554561996% no-repeat;
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*hack IE10+*/
+			margin-top: 30px;
+		}
 	}
 
 	&__no {
@@ -86,6 +94,9 @@
 		@include font(0,0);
 		margin-right: (18/16+rem);
 		background: url("../img/sprites/sprite.svg") 51.226611226611226% 70.62803445575568% no-repeat;
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*hack IE10+*/
+			margin-top: 30px;
+		}
 	}
 
 	&--features {
@@ -115,6 +126,7 @@
 @media (min-width: $md-screen) {
 	.edition__wrapper { 
 		width: 620px;
+		text-transform: inherit;
 	}
 
 	.table-edition {

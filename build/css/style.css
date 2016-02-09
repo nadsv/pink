@@ -1167,7 +1167,8 @@ a {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
     width: 280px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    text-transform: uppercase; }
 
 .table-edition {
   background-color: white;
@@ -1179,15 +1180,13 @@ a {
     height: 61px;
     width: 25%;
     font-size: 0.875rem;
-    line-height: 3.625rem;
-    text-transform: uppercase; }
+    line-height: 3.625rem; }
   .table-edition__header {
     position: relative;
     height: 100px;
     background-color: #283645;
     border-right: 0.125rem solid #f2f2f2;
-    color: white;
-    text-transform: uppercase; }
+    color: white; }
   .table-edition__title {
     font-size: 1.125rem;
     line-height: 1.875rem; }
@@ -1196,7 +1195,11 @@ a {
     line-height: 1.875rem;
     font-weight: 100; }
   .table-edition__header--hit {
-    background: linear-gradient(-45deg, #283645 81%, #d22856 0, #d22856 93%, #283645 0); }
+    background: linear-gradient(-45deg, #283645 81%, #d22856 0, #d22856 93%, #283645 0) no-repeat; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .table-edition__header--hit {
+        /*hack IE10+*/
+        height: 101px; } }
     .table-edition__header--hit::before {
       content: "хит";
       position: absolute;
@@ -1209,6 +1212,10 @@ a {
       -webkit-transform: rotate(-45deg);
               transform: rotate(-45deg);
       z-index: 10; }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .table-edition__header--hit::before {
+          /*hack IE10+*/
+          margin-top: 7px; } }
   .table-edition__yes {
     position: absolute;
     right: 0;
@@ -1221,6 +1228,10 @@ a {
     line-height: 0rem;
     margin-right: 1.125rem;
     background: url("../img/sprites/sprite.svg") 51.5377664737% 48.6540655546% no-repeat; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .table-edition__yes {
+        /*hack IE10+*/
+        margin-top: 30px; } }
   .table-edition__no {
     position: absolute;
     right: 0;
@@ -1233,6 +1244,10 @@ a {
     line-height: 0rem;
     margin-right: 1.125rem;
     background: url("../img/sprites/sprite.svg") 51.2266112266% 70.6280344558% no-repeat; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .table-edition__no {
+        /*hack IE10+*/
+        margin-top: 30px; } }
   .table-edition--features {
     display: none;
     margin-top: 99px; }
@@ -1251,7 +1266,8 @@ a {
 /*Tablet version*/
 @media (min-width: 700px) {
   .edition__wrapper {
-    width: 620px; }
+    width: 620px;
+    text-transform: inherit; }
   .table-edition {
     width: 25%; }
     .table-edition--features {

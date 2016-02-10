@@ -50,6 +50,14 @@ module.exports = function(grunt) {
           livereload: true
         },
       },
+    uglify: {
+        files: ['source/script/*.js'],
+        tasks: ['uglify'],
+        options: {
+          spawn: false,
+          livereload: true
+        },
+      }
     },
 
     cmq: {
@@ -101,8 +109,8 @@ module.exports = function(grunt) {
 
     uglify: {
         build: {
-            src: 'source/js/script.js',
-            dest: 'build/js/script.min.js'
+            src: 'source/script/*.js',
+            dest: 'build/script/script.min.js'
         }
     },
 

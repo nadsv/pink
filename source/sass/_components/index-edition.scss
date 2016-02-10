@@ -51,7 +51,10 @@
 	&__header--hit{
 		background: linear-gradient(-45deg, 
                     $color-secondary 81%, $color-primary 0, $color-primary 93%, 
-                    $color-secondary 0);
+                    $color-secondary 0) no-repeat;
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*hack IE10+*/
+			height: 101px;
+		}
 		&::before {
     	content: "хит";
     	position: absolute;
@@ -78,7 +81,7 @@
 		margin-right: (18/16+rem);
 		background: url("../img/sprites/sprite.svg") 51.53776647367893% 48.654065554561996% no-repeat;
 		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*hack IE10+*/
-			padding-top: 15px;
+			margin-top: 30px;
 		}
 	}
 
@@ -92,7 +95,7 @@
 		margin-right: (18/16+rem);
 		background: url("../img/sprites/sprite.svg") 51.226611226611226% 70.62803445575568% no-repeat;
 		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*hack IE10+*/
-			padding-top: 15px;
+			margin-top: 30px;
 		}
 	}
 

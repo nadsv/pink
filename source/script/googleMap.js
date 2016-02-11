@@ -1,7 +1,7 @@
 
 	
 <!--Google map-->
-
+(function googleMap() {
 		function initialize() {
 			var mapOptions = {
 			zoom: 16,
@@ -17,4 +17,4 @@
 			});
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
-
+})();

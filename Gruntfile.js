@@ -52,7 +52,7 @@ module.exports = function(grunt) {
       },
     uglify: {
         files: ['source/script/*.js'],
-        tasks: ['uglify'],
+        tasks: ['uglify:debug'],
         options: {
           spawn: false,
           livereload: true
@@ -111,6 +111,17 @@ module.exports = function(grunt) {
         build: {
             src: 'source/script/*.js',
             dest: 'build/script/script.min.js'
+        },
+        debug: {
+            options: {
+                beautify: {
+                    beautify: true
+                },
+                mangle: false
+            },    
+        files: {
+                'build/script/script.min.js': ['source/script/*.js']
+            }
         }
     },
 

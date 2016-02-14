@@ -1417,6 +1417,8 @@ a {
             flex-basis: auto;
     min-width: 0;
     width: calc(100% - (1 * 3.9375rem)); }
+  .review__field-group--nick {
+    margin-left: 62px; }
 
 .review__field-group--with-buttons {
   display: -webkit-flex;
@@ -1559,12 +1561,23 @@ a {
     color: white; }
 
 .review-fldset--travelers {
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   background-color: #f2f2f2;
   padding-top: 2.5rem;
   margin-bottom: 3.125rem; }
+
+.traveler {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
 
 .del-traveler {
   display: none; }
@@ -1706,8 +1719,7 @@ a {
     .review-fldset--travelers .review__field-group--nick {
       -webkit-order: 4;
           -ms-flex-order: 4;
-              order: 4;
-      margin-left: 62px; }
+              order: 4; }
   .review-fldset--achievments {
     padding-top: 50px; }
   .del-traveler {

@@ -99,10 +99,10 @@
 				<input type="date" class="review__input" for="begin-journey">
 				<label for="" class="review__input_label review__input_label--bottom" id="begin-journey">Дата выезда</label>
 			</div>
-			<div class="review__field-group  review__field-group--with-buttons">
-				<button type="button" class="change-value">&ndash;</button>
-				<input type="text" id="duration" class="review__input  review__input--small" id="duration" value="10 дней" readonly>
-				<button type="button" class="change-value">+</button>
+			<div class="review__field-group  review__field-group--with-buttons   review__field-group--duration">
+				<button type="button" class="change-value  btn--reduce">&ndash;</button>
+				<input type="text" id="duration" class="review__input  review__input--small" id="duration" value="10 дн." readonly data-units="дн.">
+				<button type="button" class="change-value  btn--add">+</button>
 				<label for="duration" class="review__input_label review__input_label--bottom">Продолжительность</label>
 			</div>
 			<div class="review__field-group">
@@ -113,26 +113,28 @@
 
 		<div class="review-fldset review-fldset--travelers  review-fldset--strip">
 			<h2 class="review__legend">Количество попутчиков *</h2>
-			<div class="review__field-group review__field-group--with-buttons">
-				<button type="button" class="change-value">&ndash;</button>
-				<input type="text" id="duration" class="review__input  review__input--small" id="travelers" value="2 чел." readonly>
-				<button type="button" class="change-value">+</button>
+			<div class="review__field-group review__field-group--with-buttons  review__field-group--travelers">
+				<button type="button" class="change-value  btn--reduce">&ndash;</button>
+				<input type="text" id="duration" class="review__input  review__input--small" id="travelers" value="1 чел." readonly data-units="чел.">
+				<button type="button" class="change-value  btn--add">+</button>
 			</div>
 			<hr class="line">
-			<div class="review__field-group review__field-group--with-numbers">
-				<label for="traveler-1" class="review__input_label">№</label>
-				<input type="text" class="review__input review__input--square" value="1" id="traveler-1" readonly>
-			</div>
-			<div class="review__field-group  review__field-group--medium  review__field-group--name">
-				<label for="traveler-name" class="review__input_label">Имя:*</label>
-				<input type="text" class="review__input" id="traveler-name" placeholder="Введите ваше имя">
-			</div>
-			<div class="review__field-group  review__field-group--medium  review__field-group--nick">
-				<label for="traveler-nick" class="review__input_label">Прозвище:</label>
-				<input type="text" class="review__input" id="traveler-nick" placeholder="Ну какже без этого!">
-			</div>
-			<div class="review__field-group  review__field-group--delete">
-				<button class="del-traveler">Удалить</button>
+			<div id="traveler-1" class="traveler">
+				<div class="review__field-group review__field-group--with-numbers">
+					<label for="traveler-1" class="review__input_label">№</label>
+					<input type="text" class="review__input review__input--square" value="1" id="traveler-1" readonly>
+				</div>
+				<div class="review__field-group  review__field-group--medium  review__field-group--name">
+					<label for="traveler-name-1" class="review__input_label">Имя:*</label>
+					<input type="text" class="review__input" id="traveler-name-1" placeholder="Введите ваше имя">
+				</div>
+				<div class="review__field-group  review__field-group--medium  review__field-group--nick">
+					<label for="traveler-nick-1" class="review__input_label">Прозвище:</label>
+					<input type="text" class="review__input" id="traveler-nick-1" placeholder="Ну какже без этого!">
+				</div>
+				<div class="review__field-group  review__field-group--delete">
+					<button class="del-traveler" id="del-traveler-1">Удалить</button>
+				</div>
 			</div>
 		</div>
 
@@ -245,6 +247,23 @@
     </div>
 
 <!-- Footer -->
+<script id="traveler-template" type="text/html">
+			<div class="review__field-group review__field-group--with-numbers">
+				<label for="traveler-{{number}}" class="review__input_label">№</label>
+				<input type="text" class="review__input review__input--square" value="{{number}}" id="traveler-{{number}}" readonly>
+			</div>
+			<div class="review__field-group  review__field-group--medium  review__field-group--name">
+				<label for="traveler-name-{{number}}" class="review__input_label">Имя:*</label>
+				<input type="text" class="review__input" id="traveler-name-{{number}}" placeholder="Введите ваше имя">
+			</div>
+			<div class="review__field-group  review__field-group--medium  review__field-group--nick">
+				<label for="traveler-nick-{{number}}" class="review__input_label">Прозвище:</label>
+				<input type="text" class="review__input" id="traveler-nick-{{number}}" placeholder="Ну какже без этого!">
+			</div>
+			<div class="review__field-group  review__field-group--delete">
+				<button class="del-traveler" id="del-traveler-{{number}}">Удалить</button>
+			</div>
+	</script>
 		<footer class="page-footer">
 			<a href="index.html" class="main-logo-tablet  main-logo-tablet--footer">
 				<svg>
@@ -280,7 +299,9 @@
 				<svg xmlns="http://www.w3.org/2000/svg" width="26.943" height="34.09" viewBox="0 0 26.943 34.09" ><path class="ha-icon" fill="#d22856" d="M13.62.017L13.472 0 0 1.412v24.66l13.472 8.018 13.43-7.99.042-.026V1.412L13.62.017zm11.4 12.11L13.494 5.334V5.23l-.088.05-.088-.056v.11L1.924 12.117v-8.97l11.547-1.213L25.02 3.147v8.98zm-11.615-5.34L24.923 13.5l-4.48 2.64-7.092-4.22-.012 1.414 5.904 3.513-.86.507-5.03-2.992-.014 1.415 3.827 2.275-.782.523-3.032-1.787-.012 1.413 1.852 1.092-1.8 1.08-11.356-6.75 11.37-6.835zm-11.48 8.34l11.41 6.79.016 1.045-7.94-4.728-.015 1.416 7.98 4.796.016 1.076-7.97-4.74-.014 1.414 8.02 4.82.046.027 8.143-4.872v-1.267l-.01-.148v-3.76l3.414-2.037v10.02L13.47 31.85 1.925 24.98v-9.853z"/></svg>
 			</a>
 		</footer>
-
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script src="script/vendors/mustache.min.2.2.1.js"></script>
+ 	<script src="script/script.min.js"></script>
 	</div>
 
 </body>

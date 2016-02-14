@@ -24,6 +24,10 @@
 		min-width: 0;
 		width: calc(100% - (1 * #{$input-height}));
 	}
+
+	&--nick {
+  		margin-left: 62px;
+  	}
 }
 
 .review__field-group--with-buttons {
@@ -159,10 +163,16 @@
 }
 
 .review-fldset--travelers {
-	justify-content: flex-end;
 	background-color: $background-secondary;
 	padding-top: (40/16+rem);
 	margin-bottom: (50/16+rem);
+}
+
+.traveler {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
 .del-traveler {
@@ -328,7 +338,6 @@
 
   			&--nick {
   				order: 4;
-  				margin-left: 62px;
   			}
   		}
 

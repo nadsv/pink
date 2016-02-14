@@ -1,7 +1,8 @@
+//Google map
 
-	
-<!--Google map-->
 (function googleMap() {
+	"use strict";
+	
 		function initialize() {
 			var mapOptions = {
 			zoom: 16,
@@ -16,5 +17,8 @@
 			icon: image
 			});
 		}
-		google.maps.event.addDomListener(window, 'load', initialize);
+		if (document.getElementById('map-canvas')) {
+			google.maps.event.addDomListener(window, 'load', initialize);
+		}
+		
 })();

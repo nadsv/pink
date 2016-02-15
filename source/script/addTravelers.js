@@ -4,12 +4,13 @@
 	"use strict";
 
 	var MAX_OF_TRAVELERS = 10;
+	var MIN_OF_TRAVELERS = 0;
 	var MAX_DAYS = 100;
 	var area = document.querySelector('.review-fldset--travelers');
 	var templateElement = document.querySelector('#traveler-template');
 
-function deleteTravelers(index) {
-	if (index > 1) {
+function deleteLastTraveler(index) {
+	if (index > MIN_OF_TRAVELERS) {
 			var removedTraveler = document.querySelector('#traveler-' + index);
 			area.removeChild(removedTraveler); 
 	}
@@ -33,7 +34,7 @@ function changeTravelers(input, index, btnClass) {
 			addTravelers(index);
 		}
 		if (btnClass === 'btn--reduce') {
-			deleteTravelers(index);
+			deleteLastTraveler(index);
 		}
 	}
 }
@@ -60,9 +61,42 @@ function reduce() {
 		var input = parent.querySelector('.review__input');
 		var oldValue = parseInt(input.value);
 		var newValue = oldValue - 1;
-   		var count = newValue < 1 ? 1 : newValue;
+   		var count = newValue < MIN_OF_TRAVELERS ? MIN_OF_TRAVELERS : newValue;
 		input.value = count + ' ' + units(input);
 		changeTravelers(input, oldValue, 'btn--reduce'); 
+    };
+}
+
+function replaceIndexes(elem, index) {
+	var tmpl = elem.innerHTML,
+		newIndex = parseInt(index) - 1,
+		oldPostfix = '-' + index,
+        newPostfix = '-' + newIndex,
+		newTmpl = tmpl.replace(oldPostfix, newPostfix);
+	elem.innerHTML = newTmpl;
+}
+
+function updateIndexes(index) {
+	//update counter of travelers
+	var travelerCount = document.querySelector('#travelers');
+   	var oldValue = parseInt(travelerCount.value);
+	var newValue = oldValue - 1;
+   	var count = newValue < MIN_OF_TRAVELERS ? MIN_OF_TRAVELERS : newValue;
+	travelerCount.value = count + ' ' + units(travelerCount);
+	//update indexes
+	var travelers = document.getElementsByClassName('traveler');
+	for (var i = (index-1); i < travelers.length; i++) {
+		var oldIndex = i+2;
+		replaceIndexes(travelers[i], oldIndex);	
+	}
+}
+
+function deleteRandonTraveler() {
+	return function () {
+		var index = this.id.substring('del-traveler-'.length);
+		var removedTraveler = document.querySelector('#traveler-' + index);
+		area.removeChild(removedTraveler);
+		updateIndexes(index);
     };
 }
 
@@ -75,8 +109,11 @@ function add() {
    		count = count < max ? count : max;  		
 		input.value = count + ' ' + units(input);
 		changeTravelers(input, count, 'btn--add'); 
+		delBtns = document.querySelector('#del-traveler-' + count);
+		delBtns.addEventListener("click", deleteRandonTraveler());	
     };
 }
+
 
 //reduce data
 
@@ -89,6 +126,12 @@ for (var i = 0; i < reduceBtns.length; i++) {
 var addBtns = document.getElementsByClassName('btn--add');
 for (var i = 0; i < addBtns.length; i++) {
 	addBtns[i].addEventListener("click", add());	
-	}
+}
+
+//delete traveler
+var delBtns = document.getElementsByClassName('del-traveler');
+for (var i = 0; i < delBtns.length; i++) {
+	delBtns[i].addEventListener("click", deleteRandonTraveler());	
+}
 
 })();

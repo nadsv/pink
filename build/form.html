@@ -115,7 +115,7 @@
 			<h2 class="review__legend">Количество попутчиков *</h2>
 			<div class="review__field-group review__field-group--with-buttons  review__field-group--travelers">
 				<button type="button" class="change-value  btn--reduce">&ndash;</button>
-				<input type="text" id="duration" class="review__input  review__input--small" id="travelers" value="1 чел." readonly data-units="чел.">
+				<input type="text" class="review__input  review__input--small" id="travelers" value="1 чел." readonly data-units="чел.">
 				<button type="button" class="change-value  btn--add">+</button>
 			</div>
 			<hr class="line">
@@ -133,7 +133,7 @@
 					<input type="text" class="review__input" id="traveler-nick-1" placeholder="Ну какже без этого!">
 				</div>
 				<div class="review__field-group  review__field-group--delete">
-					<button class="del-traveler" id="del-traveler-1">Удалить</button>
+					<button type="button" class="del-traveler" id="del-traveler-1">Удалить</button>
 				</div>
 			</div>
 		</div>
@@ -261,7 +261,7 @@
 				<input type="text" class="review__input" id="traveler-nick-{{number}}" placeholder="Ну какже без этого!">
 			</div>
 			<div class="review__field-group  review__field-group--delete">
-				<button class="del-traveler" id="del-traveler-{{number}}">Удалить</button>
+				<button type="button"  class="del-traveler" id="del-traveler-{{number}}">Удалить</button>
 			</div>
 	</script>
 		<footer class="page-footer">

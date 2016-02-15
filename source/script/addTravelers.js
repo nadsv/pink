@@ -70,9 +70,10 @@ function reduce() {
 function replaceIndexes(elem, index) {
 	var tmpl = elem.innerHTML,
 		newIndex = parseInt(index) - 1,
-		oldPostfix = '-' + index,
-        newPostfix = '-' + newIndex,
-		newTmpl = tmpl.replace(oldPostfix, newPostfix);
+		oldPostfix = index + '"',
+		rexp = new RegExp(oldPostfix, 'g'), 
+    	newPostfix = newIndex + '"',
+		newTmpl = tmpl.replace(rexp, newPostfix);
 	elem.innerHTML = newTmpl;
 }
 

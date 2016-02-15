@@ -412,6 +412,9 @@
 
 		.review__input--square {
 			border-right: 2px solid $border-color;
+			&:hover {
+				border-right: 2px solid $color-secondary-dark;
+			}
 		}
 
 		.review__field-group {

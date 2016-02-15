@@ -1769,6 +1769,8 @@ a {
               flex-basis: 247px; }
   .review-fldset--travelers .review__input--square {
     border-right: 2px solid #e5e5e5; }
+    .review-fldset--travelers .review__input--square:hover {
+      border-right: 2px solid #1d2631; }
   .review-fldset--travelers .review__field-group {
     margin-right: 20px;
     margin-left: 0; }

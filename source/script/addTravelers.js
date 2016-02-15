@@ -71,10 +71,14 @@ function replaceIndexes(elem, index) {
 	var tmpl = elem.innerHTML,
 		newIndex = parseInt(index) - 1,
 		oldPostfix = index + '"',
-		rexp = new RegExp(oldPostfix, 'g'), 
+		rexp = new RegExp(oldPostfix, 'gm'), 
     	newPostfix = newIndex + '"',
-		newTmpl = tmpl.replace(rexp, newPostfix);
+		newTmpl = tmpl.replace(rexp, newPostfix),
+		travelerName = elem.querySelector('#traveler-name-' + index).value,
+		travelerNick = elem.querySelector('#traveler-nick-' + index).value;
 	elem.innerHTML = newTmpl;
+	elem.querySelector('#traveler-name-'+newIndex).value = travelerName;
+	elem.querySelector('#traveler-nick-'+newIndex).value = travelerNick;
 }
 
 function updateIndexes(index) {

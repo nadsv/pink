@@ -67,21 +67,23 @@ function reduce() {
     };
 }
 
-function replaceIndexes(elem, index) {
-	var tmpl = elem.innerHTML,
-		newIndex = parseInt(index) - 1,
-		oldPostfix = index + '"',
-		rexp = new RegExp(oldPostfix, 'gm'), 
-    	newPostfix = newIndex + '"',
-		newTmpl = tmpl.replace(rexp, newPostfix),
-		travelerName = elem.querySelector('#traveler-name-' + index).value,
-		travelerNick = elem.querySelector('#traveler-nick-' + index).value;
+function replaceIndexes(elem) { 
+	var postfix = elem.id.substring('traveler-'.length);
+	var tmpl = elem.innerHTML;
+	var newPostfix = parseInt(postfix) - 1;
+	var rexp = new RegExp(postfix + '"', 'gm');
+	var newTmpl = tmpl.replace(rexp, newPostfix + '"');
+	var travelerName = elem.querySelector('#traveler-name-' + postfix).value;
+	var travelerNick = elem.querySelector('#traveler-nick-' + postfix).value;
 	elem.innerHTML = newTmpl;
-	elem.querySelector('#traveler-name-'+newIndex).value = travelerName;
-	elem.querySelector('#traveler-nick-'+newIndex).value = travelerNick;
+	elem.querySelector('#traveler-name-' + newPostfix).value = travelerName;
+	elem.querySelector('#traveler-nick-' + newPostfix).value = travelerNick;
+	elem.id = 'traveler-' + newPostfix;
+	var delBtns = document.querySelector('#del-traveler-' + newPostfix);
+	delBtns.addEventListener("click", deleteRandonTraveler());
 }
 
-function updateIndexes(index) {
+function updateIndexes(postfix) {
 	//update counter of travelers
 	var travelerCount = document.querySelector('#travelers');
    	var oldValue = parseInt(travelerCount.value);
@@ -89,19 +91,20 @@ function updateIndexes(index) {
    	var count = newValue < MIN_OF_TRAVELERS ? MIN_OF_TRAVELERS : newValue;
 	travelerCount.value = count + ' ' + units(travelerCount);
 	//update indexes
+	var index = postfix - 2;
 	var travelers = document.getElementsByClassName('traveler');
-	for (var i = (index-1); i < travelers.length; i++) {
-		var oldIndex = i+2;
-		replaceIndexes(travelers[i], oldIndex);	
+	for (var i = index; i < travelers.length; i++) {
+		replaceIndexes(travelers[i]);	
 	}
 }
 
 function deleteRandonTraveler() {
 	return function () {
-		var index = this.id.substring('del-traveler-'.length);
-		var removedTraveler = document.querySelector('#traveler-' + index);
+		var postfix = this.id.substring('del-traveler-'.length);
+		var removedTraveler = document.querySelector('#traveler-' + postfix);
 		area.removeChild(removedTraveler);
-		updateIndexes(index);
+		var startPostfix = parseInt(postfix) + 1;
+		updateIndexes(startPostfix);
     };
 }
 
@@ -120,7 +123,7 @@ function add() {
 }
 
 
-//reduce data
+//reduce data  
 
 var reduceBtns = document.getElementsByClassName('btn--reduce');
 for (var i = 0; i < reduceBtns.length; i++) {

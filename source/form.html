@@ -86,7 +86,7 @@
 			<div id="traveler-1" class="traveler">
 				<div class="review__field-group review__field-group--with-numbers">
 					<label for="traveler-1" class="review__input_label">№</label>
-					<input type="text" class="review__input review__input--square" value="1" id="traveler-1" readonly>
+					<input type="text" class="review__input review__input--square" value="1" id="traveler-num-1" readonly>
 				</div>
 				<div class="review__field-group  review__field-group--medium  review__field-group--name">
 					<label for="traveler-name-1" class="review__input_label">Имя:*</label>
@@ -198,7 +198,7 @@
 <script id="traveler-template" type="text/html">
 			<div class="review__field-group review__field-group--with-numbers">
 				<label for="traveler-{{number}}" class="review__input_label">№</label>
-				<input type="text" class="review__input review__input--square" value="{{number}}" id="traveler-{{number}}" readonly>
+				<input type="text" class="review__input review__input--square" value="{{number}}" id="traveler-num-{{number}}" readonly>
 			</div>
 			<div class="review__field-group  review__field-group--medium  review__field-group--name">
 				<label for="traveler-name-{{number}}" class="review__input_label">Имя:*</label>

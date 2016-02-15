@@ -115,6 +115,7 @@ module.exports = function(grunt) {
         debug: {
             options: {
                 beautify: {
+                    width: 1,
                     beautify: true
                 },
                 mangle: false

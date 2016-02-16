@@ -16,6 +16,7 @@ function deleteLastTraveler(index) {
 	}
 }
 
+
 function addTravelers(index) {
 	var templateElement = document.querySelector('#traveler-template');
 	var template = templateElement.innerHTML;

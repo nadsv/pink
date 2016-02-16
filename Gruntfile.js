@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         },
       },
     uglify: {
-        files: ['source/script/*.js'],
+        files: ['source/script/**/*.js'],
         tasks: ['uglify:debug'],
         options: {
           spawn: false,
@@ -121,7 +121,8 @@ module.exports = function(grunt) {
                 mangle: false
             },    
         files: {
-                'build/script/script.min.js': ['source/script/*.js']
+                'build/script/script.min.js': ['source/script/*.js'],
+                'build/script/form.min.js': ['source/script/form/*.js']
             }
         }
     },

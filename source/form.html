@@ -69,8 +69,8 @@
 		<div class="review-fldset  review-fldset--duration">
 			<h2 class="review__legend">Когда вы путешествовали? *</h2>
 			<div class="review__field-group">
-				<input type="date" class="review__input" for="begin-journey">
-				<label for="" class="review__input_label review__input_label--bottom" id="begin-journey">Дата выезда</label>
+				<input type="text" class="review__input" for="begin-journey" id="begin-journey">
+				<label for="" class="review__input_label review__input_label--bottom">Дата выезда</label>
 			</div>
 			<div class="review__field-group  review__field-group--with-buttons   review__field-group--duration">
 				<button type="button" class="change-value  btn--reduce">&ndash;</button>
@@ -79,8 +79,8 @@
 				<label for="duration" class="review__input_label review__input_label--bottom">Продолжительность</label>
 			</div>
 			<div class="review__field-group">
-				<input type="date" class="review__input" for="end-journey" readonly>
-				<label for="" class="review__input_label review__input_label--bottom" id="end-journey">Дата возвращения</label>
+				<input type="text" class="review__input" id="end-journey" readonly>
+				<label for="end-journey" class="review__input_label review__input_label--bottom" id="end-journey">Дата возвращения</label>
 			</div>
 		</div>
 
@@ -221,7 +221,12 @@
 				<button type="button"  class="del-traveler" id="del-traveler-{{number}}">Удалить</button>
 			</div>
 	</script>
-@@include("footer.html")
+	@@include("footer.html")
+	<script src="script/vendors/mustache.min.2.2.1.js"></script>
+	<script src="script/vendors/moment-with-locales.min.2.11.2.js"></script>
+	<script src="script/vendors/pikaday.min.1.4.0.js"></script>
+	@@include("scripts.html")
+	<script src="script/form.min.js"></script>
 	</div>
 
 </body>

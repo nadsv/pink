@@ -33,6 +33,8 @@ function changeTravelers(input, index, btnClass) {
 	if (parent.classList.contains("review__field-group--travelers")) {
 		if (btnClass === 'btn--add') {
 			addTravelers(index);
+			delBtns = document.querySelector('#del-traveler-' + index);
+			delBtns.addEventListener("click", deleteRandonTraveler());	
 		}
 		if (btnClass === 'btn--reduce') {
 			deleteLastTraveler(index);
@@ -64,7 +66,7 @@ function reduce() {
 		var newValue = oldValue - 1;
    		var count = newValue < MIN_OF_TRAVELERS ? MIN_OF_TRAVELERS : newValue;
 		input.value = count + ' ' + units(input);
-		changeTravelers(input, oldValue, 'btn--reduce'); 
+		changeTravelers(input, oldValue, 'btn--reduce');
     };
 }
 
@@ -118,8 +120,6 @@ function add() {
    		count = count < max ? count : max;  		
 		input.value = count + ' ' + units(input);
 		changeTravelers(input, count, 'btn--add'); 
-		delBtns = document.querySelector('#del-traveler-' + count);
-		delBtns.addEventListener("click", deleteRandonTraveler());	
     };
 }
 

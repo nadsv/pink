@@ -6,6 +6,7 @@
 	var MAX_OF_TRAVELERS = 10;
 	var MIN_OF_TRAVELERS = 0;
 	var MAX_DAYS = 100;
+	var MIN_DAYS = 1;
 	var area = document.querySelector('.review-fldset--travelers');
 	var templateElement = document.querySelector('#traveler-template');
 
@@ -29,8 +30,6 @@ function addTravelers(index) {
 }
 
 function changeTravelers(input, index, btnClass) {
-	var parent = input.parentElement;
-	if (parent.classList.contains("review__field-group--travelers")) {
 		if (btnClass === 'btn--add') {
 			addTravelers(index);
 			delBtns = document.querySelector('#del-traveler-' + index);
@@ -39,7 +38,6 @@ function changeTravelers(input, index, btnClass) {
 		if (btnClass === 'btn--reduce') {
 			deleteLastTraveler(index);
 		}
-	}
 }
 	
 
@@ -58,15 +56,33 @@ function maxValue(unit) {
 	}
 }
 
+function minValue(unit) {
+	switch (unit) {
+  		case "чел.":
+  			return MIN_OF_TRAVELERS;
+  		case "дн.":
+  			return MIN_DAYS;
+  		default:
+    		return '';
+	}
+}
+
 function reduce() {
 	return function () {
        	var parent = this.parentElement;
 		var input = parent.querySelector('.review__input');
 		var oldValue = parseInt(input.value);
 		var newValue = oldValue - 1;
-   		var count = newValue < MIN_OF_TRAVELERS ? MIN_OF_TRAVELERS : newValue;
+   		var min = minValue(units(input));
+   		var count = newValue < min ? min : newValue;
 		input.value = count + ' ' + units(input);
-		changeTravelers(input, oldValue, 'btn--reduce');
+		var parent = input.parentElement;
+		if (parent.classList.contains("review__field-group--travelers")) {
+					changeTravelers(input, oldValue, 'btn--reduce');
+		}
+		if (parent.classList.contains("review__field-group--duration")) {
+					setEndDate(picker);
+		}
     };
 }
 
@@ -119,7 +135,13 @@ function add() {
 		var max = maxValue(units(input));
    		count = count < max ? count : max;  		
 		input.value = count + ' ' + units(input);
-		changeTravelers(input, count, 'btn--add'); 
+		var parent = input.parentElement;
+		if (parent.classList.contains("review__field-group--travelers")) {
+					changeTravelers(input, count, 'btn--add');
+		}
+		if (parent.classList.contains("review__field-group--duration")) {
+			setEndDate(picker);
+		}
     };
 }
 
@@ -142,5 +164,40 @@ var delBtns = document.getElementsByClassName('del-traveler');
 for (var i = 0; i < delBtns.length; i++) {
 	delBtns[i].addEventListener("click", deleteRandonTraveler());	
 }
+
+//Calendar
+	 moment.locale('ru'); 
+	 var disable = false, 
+	    picker = new Pikaday({
+        field: document.getElementById('begin-journey'),
+        firstDay: 1,
+        minDate: new Date(2000, 0, 1),
+        maxDate: new Date(2020, 12, 31),
+        yearRange: [2000,2020],
+        format: 'Do MMMM YYYY',
+        firstDay: 1,
+        i18n: {
+            previousMonth : 'Пред. мес.',
+            nextMonth     : 'След. мес.',
+            months        : ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+            weekdays      : ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
+            weekdaysShort : ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
+        },
+        onSelect: function() {
+        	var obj = this;
+        	setEndDate(obj); 
+        }
+        
+    });
+
+	picker.setMoment(moment());
+
+	function setEndDate(elem) {
+	    	var beginDate = elem.getMoment(),
+        	duration = parseInt(document.getElementById('duration').value) - 1,
+       		momentDuration = moment.duration(duration, 'd'),
+      	    endDuration  = beginDate.add(momentDuration);
+            document.getElementById('end-journey').value = endDuration.format('Do MMMM YYYY');
+	    }
 
 })();

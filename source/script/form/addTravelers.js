@@ -1,4 +1,4 @@
-//Add travelers and days
+//Add travelers and days 
 
 (function changeTravelersDays() {
 	"use strict";

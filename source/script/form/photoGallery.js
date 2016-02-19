@@ -8,12 +8,15 @@
 	if (form) {
 		var queue = [];
 		var template = document.querySelector("#photo-template").innerHTML; 
+		console.log('template'); 
 
 		if ("FileReader" in window) {
         	var gallery = document.querySelector(".review__gallery"); 
+        	console.log(gallery); 
 
 			form.querySelector("#upload-photo").addEventListener("change", function() {
 				var files = this.files;
+				console.log(this); 
  				for (var i = 0; i < files.length; i++) {
  					preview(files[i]);
  				}
@@ -33,11 +36,11 @@
  							});
 
 						var div = document.createElement("div");
-						div.classList.add("recall-form__loaded-photo");
+						div.classList.add("review__loaded-photo");
  						div.innerHTML = html;
 						gallery.appendChild(div); 
 						queue.push({file: file, div: div});
-						div.querySelector(".recall-form__delete-photo").addEventListener("click",
+						div.querySelector(".review__delete-photo").addEventListener("click",
 						function(event) {
 							event.preventDefault();
  							removePreview(div);

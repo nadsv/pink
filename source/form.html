@@ -144,6 +144,7 @@
             <h2 class="review__legend">Ваши фотографии из поездки *</h2>
             
             <button type="button" class="btn  btn--white" >Загрузить фото</button>
+            <input type="file" class="review__load-files"  id="upload-photo" name="images" multiple hidden>
 
             <hr class="line">
 
@@ -204,7 +205,7 @@
 @@include("modals.html")
 
 <!-- Footer -->
-<script id="traveler-template" type="text/html">
+	<script id="traveler-template" type="text/html">
 			<div class="review__field-group review__field-group--with-numbers">
 				<label for="traveler-{{number}}" class="review__input_label">№</label>
 				<input type="text" class="review__input review__input--square" value="{{number}}" id="traveler-num-{{number}}" readonly>
@@ -220,6 +221,15 @@
 			<div class="review__field-group  review__field-group--delete">
 				<button type="button"  class="del-traveler" id="del-traveler-{{number}}">Удалить</button>
 			</div>
+	</script>
+	<script id="#photo-template" type="text/html">
+			<div class="review__loaded-photo">
+                    <img src="{{src}}" alt="Private Photo" width="70" height="70">
+                    <p>{{image-name}}</p>
+                    <a href="#" class="review__delete-photo" title="Удалить">
+                        &#x2715;
+                    </a>
+            </div>
 	</script>
 	@@include("footer.html")
 	<script src="script/vendors/mustache.min.2.2.1.js"></script>

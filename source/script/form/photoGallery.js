@@ -4,13 +4,13 @@
 		return;
 		}
 
-	var form = document.querySelector(".recall-form");
+	var form = document.querySelector(".review-form");
 	if (form) {
 		var queue = [];
 		var template = document.querySelector("#photo-template").innerHTML; 
 
 		if ("FileReader" in window) {
-        	var gallery = document.querySelector(".recall-form__gallery"); 
+        	var gallery = document.querySelector(".review__gallery"); 
 
 			form.querySelector("#upload-photo").addEventListener("change", function() {
 				var files = this.files;

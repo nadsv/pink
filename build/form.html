@@ -248,7 +248,7 @@
     </div>
 
 <!-- Footer -->
-<script id="traveler-template" type="text/html">
+	<script id="traveler-template" type="text/html">
 			<div class="review__field-group review__field-group--with-numbers">
 				<label for="traveler-{{number}}" class="review__input_label">№</label>
 				<input type="text" class="review__input review__input--square" value="{{number}}" id="traveler-num-{{number}}" readonly>
@@ -264,6 +264,15 @@
 			<div class="review__field-group  review__field-group--delete">
 				<button type="button"  class="del-traveler" id="del-traveler-{{number}}">Удалить</button>
 			</div>
+	</script>
+	<script id="#photo-template" type="text/html">
+			<div class="review__loaded-photo">
+                    <img src="img/img-6.jpg" alt="Private Photo" width="70" height="70">
+                    <p>img-6.jpg</p>
+                    <a href="#" class="review__delete-photo" title="Удалить">
+                        &#x2715;
+                    </a>
+            </div>
 	</script>
 			<footer class="page-footer">
 			<a href="index.html" class="main-logo-tablet  main-logo-tablet--footer">

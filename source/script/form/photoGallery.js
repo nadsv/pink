@@ -8,15 +8,12 @@
 	if (form) {
 		var queue = [];
 		var template = document.querySelector("#photo-template").innerHTML; 
-		console.log('template'); 
 
 		if ("FileReader" in window) {
         	var gallery = document.querySelector(".review__gallery"); 
-        	console.log(gallery); 
 
 			form.querySelector("#upload-photo").addEventListener("change", function() {
 				var files = this.files;
-				console.log(this); 
  				for (var i = 0; i < files.length; i++) {
  					preview(files[i]);
  				}
@@ -32,7 +29,7 @@
 					reader.addEventListener("load", function(event) {
 						var html = Mustache.render(template, {
  							"src": event.target.result,
- 							"photo-name": file.name
+ 							"image-name": file.name.substring(0,15)
  							});
 
 						var div = document.createElement("div");
@@ -40,15 +37,19 @@
  						div.innerHTML = html;
 						gallery.appendChild(div); 
 						queue.push({file: file, div: div});
-						div.querySelector(".review__delete-photo").addEventListener("click",
-						function(event) {
-							event.preventDefault();
- 							removePreview(div);
-						});
+						addDeleteEvent(div);
  					});
 
  					reader.readAsDataURL(file);
  				}
+			}
+
+			function addDeleteEvent(div) {
+				div.querySelector(".review__delete-photo").addEventListener("click",
+						function(event) {
+							event.preventDefault();
+ 							removePreview(div);
+						});
 			}
 
 			function removePreview(div) {
@@ -56,11 +57,26 @@
  				return element.div != div;
  				});
  				div.parentNode.removeChild(div);
-			}		
+			}
+
+			//reduce data  
+
+			var deleteCrosses = document.getElementsByClassName('review__delete-photo');
+			for (var i = 0; i < deleteCrosses.length; i++) {
+					var parent = deleteCrosses[i].parentNode;
+					deleteCrosses[i].addEventListener("click", addDeleteEvent(parent));
+				}		
 		}
 //Submit
 		form.addEventListener("submit", function(event) {
 			event.preventDefault();
+
+			var v = formValidate();
+
+			if (v === false) {
+				return false;
+			}
+
 			var data = new FormData(form);
 
 			queue.forEach(function(element) {
@@ -68,7 +84,8 @@
  			});
 
 			request(data, function(response) {
-			console.log(response);
+				//console.log(response);
+				document.querySelector(".answer--success").classList.remove("hidden");
 			});
 		});
 	}
@@ -84,4 +101,20 @@
 	});
 		xhr.send(data);
 	}
+
+	//Form Validate
+	function formValidate() {
+		var answer = document.querySelector(".answer--failure");
+		var requiredFields = document.querySelectorAll('[required]');
+			for (var i = 0; i < requiredFields.length; i++) {
+				var input = requiredFields[i];
+				if (input.value.trim() === "") {
+					answer.classList.remove("hidden");
+					return false;
+				}
+			}
+		return true;
+	};
 }) ();
+
+

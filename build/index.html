@@ -36,10 +36,10 @@
 					<a href="#" class="page-nav__toggle"><span></span></a>
 				</div>
 				<ul id="main-menu" class="main-menu  main-menu--closed">
-					<li class="main-menu__item"><a href="#">Информация</a></li>
-					<li class="main-menu__item"><a href="#">Блог</a></li>
-					<li class="main-menu__item"><a href="#">Отзывы</a></li>
-					<li class="main-menu__item"><a href="#">Конкурс</a></li>
+					<li class="main-menu__item"><a href="index.html">Информация</a></li>
+					<li class="main-menu__item"><a href="blog.html">Блог</a></li>
+					<li class="main-menu__item"><a href="index.html#review">Отзывы</a></li>
+					<li class="main-menu__item"><a href="form.html">Конкурс</a></li>
 				</ul>
 			</nav> 	
 			<div class="page-header__wrapper">
@@ -91,29 +91,36 @@
 		</section>
 
 	<!-- Review -->
-		<section class="review">
-			<div class="review__item">
-				<p class="review__text">
-				Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
-				</p>
-				<p class="review__author-name">Николай Петров</p>
-				<p class="review__author-profession">25 лет, водитель трамвая</p>
+	<link rel="stylesheet" type="text/css" href="css/vendors/swiper.css">
+		<section class="review" id="review">
+			<div class="swiper-wrapper">
+				<div class="review__item swiper-slide">
+					<p class="review__text">
+					Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
+					</p>
+					<p class="review__author-name">Николай Петров</p>
+					<p class="review__author-profession">25 лет, водитель трамвая</p>
+				</div>
+				<div class="review__item swiper-slide">
+					<p class="review__text">
+					Cерая скука и скучная серость - это не для меня! А вот это приложение - точно для меня!
+					</p>
+					<p class="review__author-name">Федор Михайлов</p>
+					<p class="review__author-profession">27 лет, учитель</p>
+				</div>
+				<div class="review__item swiper-slide">
+					<p class="review__text">
+					Когда серое становится розовым, жизнь превращается в праздник! Это приложение дарит удивительное ощущение праздника.
+					</p>
+					<p class="review__author-name">Ольга Васильева</p>
+					<p class="review__author-profession">35 лет, консультант</p>
+				</div>
 			</div>
-			<div class="review__item">
-				<p class="review__text">
-				Cерая скука и скучная серость - это не для меня! А вот это приложение - точно для меня!
-				</p>
-				<p class="review__author-name">Федор Михайлов</p>
-				<p class="review__author-profession">27 лет, учитель</p>
-			</div>
-			<div class="review__item">
-				<p class="review__text">
-				Когда серое становится розовым, жизнь превращается в праздник! Это приложение дарит удивительное ощущение праздника.
-				</p>
-				<p class="review__author-name">Ольга Васильева</p>
-				<p class="review__author-profession">35 лет, консультант</p>
-			</div>
-			<div class="review__slider"></div>
+			 <!-- Add Pagination -->
+        	<div class="review__pagination"></div>
+        	<!-- Add Arrows -->
+        	<div class="swiper-button-next  swiper-button-black"></div>
+        	<div class="swiper-button-prev  swiper-button-black"></div>
 		</section>
 
 		<!-- Edition -->
@@ -268,7 +275,7 @@
 
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="script/vendors/swiper.min.3.3.1.js"></script>
 <script src="script/script.min.js"></script>
-
 </body>
 </html>

@@ -1,6 +1,12 @@
 .answer {
-	min-width: $sm-screen;
+	position: absolute;
+	z-index: 20;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: $sm-screen;
 	text-align: center;
+	background-color: $light-text;
 	box-shadow: 0 0 15px 7px $background-secondary;
 	padding-bottom: (35/16+rem);
 
@@ -16,5 +22,27 @@
 	p {
 		@include font(14,24);
 		color: $prime-text;
+	}
+}
+
+/*Tablet version*/
+
+@media (min-width: $md-screen) {
+	.answer {
+		width: $popup-width-tablet;
+	}
+}
+
+/*Descktop version*/
+
+@media (min-width: $lg-screen) {
+	.answer {
+		.wrapper {
+			padding: (35/16+rem) (100/16+rem);
+		}
+	
+		&--success {
+			width: 780px;
+		}
 	}
 }

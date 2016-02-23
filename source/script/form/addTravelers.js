@@ -175,7 +175,6 @@ for (var i = 0; i < delBtns.length; i++) {
         maxDate: new Date(2020, 12, 31),
         yearRange: [2000,2020],
         format: 'Do MMMM YYYY',
-        firstDay: 1,
         i18n: {
             previousMonth : 'Пред. мес.',
             nextMonth     : 'След. мес.',
@@ -184,8 +183,8 @@ for (var i = 0; i < delBtns.length; i++) {
             weekdaysShort : ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
         },
         onSelect: function() {
-        	var obj = this;
-        	setEndDate(obj); 
+        	var self = this;
+        	setEndDate(self); 
         }
         
     });

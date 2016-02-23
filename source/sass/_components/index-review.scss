@@ -37,3 +37,85 @@
 	}
 
 }
+
+.review {
+		position: relative;
+		overflow: hidden;
+    }
+
+.review__item {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.swiper-button-next, 
+.swiper-button-prev {
+	display: none;
+}
+
+//Tablet version
+@media (min-width: $md-screen) {
+	.review {
+		width: $md-screen;
+		margin: 0 auto;
+
+		&__text {
+			order: 1;
+			@include font(18, 30);
+			padding-bottom: 35px;
+		}
+
+		&__author-name {
+			order: 2;
+			@include font(20, 30);
+		}
+
+		&__author-profession {
+			display: block;
+			order: 3;
+			@include font(14, 30);
+		}
+	}
+}
+//Display version
+@media (min-width: $lg-screen) {
+	.swiper-button-next, 
+	.swiper-button-prev {
+			display: block;
+	}
+
+	.review {
+		width: $lg-screen;
+		padding-top: 170px;
+
+		&__text {
+			width: 690px;
+			margin: 0 auto
+		}
+
+		&__author-name {
+			@include font(24, 30);
+		}
+
+		&__author-profession {
+			display: block;
+			order: 3;
+			@include font(18, 30);
+		}
+
+		&:before {
+			content: "";
+			top: 70px;
+			left: 50%;
+			transform: translate(-50%, 0);
+			display: block;
+			position: absolute;
+			@include size(88.67, 73.79);
+			background: url("../img/sprites/sprite.svg") 56.068301385323934% 29.76506856596152% no-repeat; 
+		}
+	}
+}

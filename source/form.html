@@ -6,7 +6,6 @@
 	<title>Pink</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/vendors/pikaday.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300, 700&subset=cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -34,19 +33,19 @@
 		</p>
 	</section>
 
-	<form action="get" class="review-form">
+	<form action="get" class="review-form" novalidate>
 		<div class="review-fldset  review-fldset--name">
 			<div class="review__field-group">
 				<label for="first-name" class="review__input_label">Имя:*</label>
-				<input type="text" class="review__input" id="first-name" placeholder="Введите ваше имя">
+				<input type="text" class="review__input" id="first-name" placeholder="Введите ваше имя" required>
 			</div>
 			<div class="review__field-group">
 				<label for="last-name" class="review__input_label">Фамилия:*</label>
-				<input type="text" class="review__input" id="last-name" placeholder="Укажите фамилию">
+				<input type="text" class="review__input" id="last-name" placeholder="Укажите фамилию" required>
 			</div>
 			<div class="review__field-group">
 				<label for="patronymic" class="review__input_label">Отчество:*</label>
-				<input type="text" class="review__input" id="patronymic" placeholder="Ну и отчество тоже">
+				<input type="text" class="review__input" id="patronymic" placeholder="Ну и отчество тоже" required>
 			</div>
 		</div>
 
@@ -65,11 +64,11 @@
 				<label for="chkWindows" class="review__radio_label">Windows Phone</label>
 			</div>
 		</div>
-
+<link rel="stylesheet" type="text/css" href="css/vendors/pikaday.css">
 		<div class="review-fldset  review-fldset--duration">
 			<h2 class="review__legend">Когда вы путешествовали? *</h2>
 			<div class="review__field-group">
-				<input type="text" class="review__input" for="begin-journey" id="begin-journey">
+				<input type="text" class="review__input" for="begin-journey" id="begin-journey" required>
 				<label for="begin-journey" class="review__input_label review__input_label--bottom">Дата выезда</label>
 			</div>
 			<div class="review__field-group  review__field-group--with-buttons   review__field-group--duration">
@@ -99,7 +98,7 @@
 				</div>
 				<div class="review__field-group  review__field-group--medium  review__field-group--name">
 					<label for="traveler-name-1" class="review__input_label">Имя:*</label>
-					<input type="text" class="review__input" id="traveler-name-1" placeholder="Введите ваше имя">
+					<input type="text" class="review__input" id="traveler-name-1" placeholder="Введите ваше имя" required>
 				</div>
 				<div class="review__field-group  review__field-group--medium  review__field-group--nick">
 					<label for="traveler-nick-1" class="review__input_label">Прозвище:</label>
@@ -143,8 +142,10 @@
             
             <h2 class="review__legend">Ваши фотографии из поездки *</h2>
             
-            <button type="button" class="btn  btn--white" >Загрузить фото</button>
-            <input type="file" class="review__load-files"  id="upload-photo" name="images" multiple hidden>
+            <div class="btn  btn--white  btn--load" >
+            	<span class="btn__name">Загрузить фото</span>
+            	<input type="file" class="review__load-files"  id="upload-photo" name="images" multiple>
+            </div>
 
             <hr class="line">
 
@@ -191,6 +192,13 @@
                         &#x2715;
                     </a>
                 </div>
+                <div class="review__loaded-photo">
+                    <img src="img/img-6.jpg" alt="Private Photo" width="70" height="70">
+                    <p>img-6.jpg</p>
+                    <a href="#" class="review__delete-photo" title="Удалить">
+                        &#x2715;
+                    </a>
+                </div>
             </div>
 
          </div>  
@@ -211,7 +219,7 @@
 				<input type="text" class="review__input review__input--square" value="{{number}}" id="traveler-num-{{number}}" readonly>
 			</div>
 			<div class="review__field-group  review__field-group--medium  review__field-group--name">
-				<label for="traveler-name-{{number}}" class="review__input_label">Имя:*</label>
+				<label for="traveler-name-{{number}}" class="review__input_label" required>Имя:*</label>
 				<input type="text" class="review__input" id="traveler-name-{{number}}" placeholder="Введите ваше имя">
 			</div>
 			<div class="review__field-group  review__field-group--medium  review__field-group--nick">
@@ -223,19 +231,17 @@
 			</div>
 	</script>
 	<script id="photo-template" type="text/html">
-			<div class="review__loaded-photo">
-                    <img src="{{src}}" alt="Private Photo" width="70" height="70">
-                    <p>{{image-name}}</p>
-                    <a href="#" class="review__delete-photo" title="Удалить">
-                        &#x2715;
-                    </a>
-            </div>
+            <img src="{{src}}" alt="Private Photo" width="70" height="70">
+            <p>{{image-name}}</p>
+            <a href="#" class="review__delete-photo" title="Удалить">
+                &#x2715;
+            </a>
 	</script>
 	@@include("footer.html")
+	@@include("scripts.html")
 	<script src="script/vendors/mustache.min.2.2.1.js"></script>
 	<script src="script/vendors/moment-with-locales.min.2.11.2.js"></script>
 	<script src="script/vendors/pikaday.min.1.4.0.js"></script>
-	@@include("scripts.html")
 	<script src="script/form.min.js"></script>
 	</div>
 

@@ -8,10 +8,25 @@
 	}
 }
 
+.review__load-files {
+ 	position: absolute;
+ 	cursor: pointer;
+ 	top: 0;
+ 	right: 0;
+ 	opacity: 0;
+ 	width: 100%;
+ 	height: 100%;
+}
+
+.btn__name {
+	display: inline-block;
+	text-align: center;
+}
+
 .review__gallery {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: flex-start;
 	flex-direction: row;
 	padding-top: (15/16+rem);
 	margin-left: (-20/16+rem);
